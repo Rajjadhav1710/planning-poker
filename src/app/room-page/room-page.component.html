@@ -1,0 +1,76 @@
+<div class="room-page-container">
+    <nav class="room-page-navbar">
+        <div class="room-page-navbar-left-items-container">
+            <div class="logo">
+                <img src="" alt="logo">
+            </div>
+            <div class="room-name-container">
+                <p class="room-name">Room Name</p>
+            </div>
+        </div>
+        <div class="room-page-navbar-right-items-container">
+            <div class="user-profile-container">
+                <div class="user-profile-image-container">
+                    <img src="" alt="user profile image">
+                </div>
+                <div class="username-container">
+                    <p class="username">Username</p>
+                </div>
+            </div>
+            <div class="invite-members-btn-container">
+                <button class="invite-members-btn">Invite Members</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="room-page-content-container">
+        <div class="other-users-voting-cards-container">
+            <div class="other-users-voting-cards">
+                <app-voting-card></app-voting-card>
+                <app-voting-card></app-voting-card>
+                <app-voting-card></app-voting-card>
+            </div>
+        </div>
+
+        <div class="voting-cards-controls-container">
+            <div class="room-voting-status-container">
+                <p class="room-voting-status">Pick your cards!</p>
+                <p class="room-voting-status">Picking...</p>
+            </div>
+            <div class="voting-cards-controls">
+                <div class="reveal-voting-cards-btn-container">
+                    <button>Reveal Cards</button>
+                </div>
+                <div class="start-new-voting-btn-container">
+                    <button>Start new voting</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="my-voting-card-container">
+            <div class="my-voting-card">
+                <app-voting-card></app-voting-card>
+            </div>
+        </div>
+    </div>
+
+    <app-card-deck></app-card-deck>
+
+    <div class="voting-analytics-container">
+        <div class="voting-analytics-row">
+            <div class="voting-analytics-col">
+                <p>Average</p>
+                <p>2.5</p>
+            </div>
+            <div class="voting-analytics-col">
+                <p>Agreement</p>
+                <p>20%</p>
+            </div>
+        </div>
+        <div class="voting-analytics-row">
+            <div class="voting-analytics-col">
+                <app-card-deck></app-card-deck>
+            </div>
+        </div>
+    </div>
+</div>
