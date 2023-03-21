@@ -13,4 +13,17 @@ export class SocketIoService {
     this.socket = io('localhost:3000');
     this.roomDataService = roomDataService;
   }
+
+  createRoom(roomDetails : { 
+    roomId: string, 
+    roomName: string, 
+    votingSystem: string 
+  }, callBack : any ): void {
+    console.log("executed createRoom : SocketIoService", roomDetails);
+    
+    this.socket.emit('create-room', roomDetails, () => {
+      // Calling callBack after creating the room
+      callBack();
+    });
+  }
 }

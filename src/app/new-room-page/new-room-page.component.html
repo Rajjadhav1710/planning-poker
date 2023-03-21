@@ -4,19 +4,19 @@
     </div>
     <div class="new-room-inputs-container">
         <div class="new-room-name-input-container">
-            <input type="text" placeholder="Room's Name">
+            <input [(ngModel)]="roomName" type="text" placeholder="Room's Name">
         </div>
         <div class="new-room-voting-system-input-container">
             <label for="voting_system_select">Voting System </label>
 
-            <select name="" id="voting_system_select">
-                <option value="">Fibonacci</option>
+            <select [(ngModel)]="votingSystem" name="" id="voting_system_select">
+                <option value="fibonacci">Fibonacci ( 0, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ? )</option>
                 <!-- <option value=""></option> -->
                 <!-- <option value=""></option> -->
             </select>
         </div>
     </div>
     <div class="create-room-btn-container">
-        <button class="create-room-btn">Create Room</button>
+        <button (click)="createRoom()" class="create-room-btn">Create Room</button>
     </div>
 </div>

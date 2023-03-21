@@ -6,6 +6,7 @@ import { Room } from '../Models/room.model';
 })
 export class RoomDataService {
   private room: Room;
+  private currentUserId: string;
 
   constructor() { 
     this.room = {
@@ -15,7 +16,9 @@ export class RoomDataService {
       activeUsers: [],
       votingDecks: [],
       averageVote: "",
-      agreement: ""
+      agreement: "",
+      allCardsRevealed: false
     };
+    this.currentUserId = "";
   }
 }

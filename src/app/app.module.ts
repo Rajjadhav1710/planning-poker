@@ -10,6 +10,7 @@ import { SingleInputModalComponent } from './single-input-modal/single-input-mod
 import { RoomPageComponent } from './room-page/room-page.component';
 import { CardDeckComponent } from './card-deck/card-deck.component';
 import { VotingCardComponent } from './voting-card/voting-card.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { VotingCardComponent } from './voting-card/voting-card.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
