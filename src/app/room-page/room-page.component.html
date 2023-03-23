@@ -1,4 +1,10 @@
 <div class="room-page-container">
+    <app-single-input-modal 
+        (modalDataEvent)="handleContinue($event)" 
+        heading="Choose your display name"
+        placeholder="Your display name"
+    ></app-single-input-modal>
+
     <nav class="room-page-navbar">
         <div class="room-page-navbar-left-items-container">
             <div class="logo">

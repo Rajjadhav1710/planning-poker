@@ -1,16 +1,16 @@
 <div class="single-input-modal-container">
     <div class="single-input-modal">
-        <div class="single-input-modal-close-btn">
+        <!-- <div class="single-input-modal-close-btn">
             <button>X</button>
-        </div>
+        </div> -->
         <div class="single-input-modal-heading">
-            <h1>Choose your display name</h1>
+            <h1>{{heading}}</h1>
         </div>
         <div class="single-input-modal-input">
-            <input type="text" placeholder="Your display name">
+            <input [(ngModel)]="modalData" type="text" [placeholder]="placeholder">
         </div>
         <div class="single-input-modal-submit-btn-container">
-            <button>Continue</button>
+            <button (click)="handleContinue()">Continue</button>
         </div>
     </div>
 </div>
