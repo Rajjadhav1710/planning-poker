@@ -11,7 +11,7 @@
                 <img src="" alt="logo">
             </div>
             <div class="room-name-container">
-                <p class="room-name">Room Name</p>
+                <p class="room-name">{{roomDataService.getCurrentRoom().roomName}}</p>
             </div>
         </div>
         <div class="room-page-navbar-right-items-container">
@@ -20,7 +20,7 @@
                     <img src="" alt="user profile image">
                 </div>
                 <div class="username-container">
-                    <p class="username">Username</p>
+                    <p class="username">{{roomDataService.getCurrentUser()?.userName}}</p>
                 </div>
             </div>
             <div class="invite-members-btn-container">
@@ -32,9 +32,16 @@
     <div class="room-page-content-container">
         <div class="other-users-voting-cards-container">
             <div class="other-users-voting-cards">
-                <app-voting-card></app-voting-card>
-                <app-voting-card></app-voting-card>
-                <app-voting-card></app-voting-card>
+                <div *ngFor="let user of roomDataService.getCurrentRoom().activeUsers">
+                    <app-voting-card 
+                        *ngIf="user.userId !== roomDataService.getCurrentUser()?.userId" 
+                        [votingStatus]="user.votingStatus" 
+                        [userName]="user.userName"
+                    >
+                    </app-voting-card>
+                </div>
+                <!-- <app-voting-card></app-voting-card>
+                <app-voting-card></app-voting-card> -->
             </div>
         </div>
 
@@ -55,22 +62,25 @@
 
         <div class="my-voting-card-container">
             <div class="my-voting-card">
-                <app-voting-card></app-voting-card>
+                <app-voting-card 
+                    [votingStatus]="roomDataService.getCurrentUser()?.votingStatus"
+                    [userName]="roomDataService.getCurrentUser()?.userName"
+                ></app-voting-card>
             </div>
         </div>
     </div>
 
-    <app-card-deck></app-card-deck>
+    <app-card-deck [cardDeck]="roomDataService.getCurrentVotingDeck()"></app-card-deck>
 
     <div class="voting-analytics-container">
         <div class="voting-analytics-row">
             <div class="voting-analytics-col">
                 <p>Average</p>
-                <p>2.5</p>
+                <p>{{roomDataService.getCurrentRoom().averageVote}}</p>
             </div>
             <div class="voting-analytics-col">
                 <p>Agreement</p>
-                <p>20%</p>
+                <p>{{roomDataService.getCurrentRoom().agreement}}</p>
             </div>
         </div>
         <div class="voting-analytics-row">

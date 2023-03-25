@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { io, Socket } from 'socket.io-client';
+import { Room } from '../Models/room.model';
 import { User } from '../Models/user.model';
 import { RoomDataService } from './room-data.service';
 
@@ -34,4 +35,109 @@ export class SocketIoService {
     // Calling callBack after joining the room
     this.socket.emit('join-room', roomId, newUser, callBack);
   }
+
+  giveVote(voteDetails : {
+    roomId: string,
+    userId: string,
+    vote: string,
+    votingStatus: boolean
+  }): void {
+    console.log("executed giveVote : SocketIoService", voteDetails);
+
+    this.socket.emit('give-vote', voteDetails);
+  }
+
+  revokeVote(voteDetails : {
+    roomId: string,
+    userId: string,
+    vote: string,
+    votingStatus: boolean
+  }): void {
+    console.log("executed revokeVote : SocketIoService", voteDetails);
+
+    this.socket.emit('revoke-vote', voteDetails);
+  }
+
+  revealCards(roomId: string): void {
+    console.log("executed revealCards : SocketIoService", roomId);
+
+    this.socket.emit('reveal-cards', roomId);
+  }
+
+  startNewVoting(roomId: string): void {
+    console.log("executed startNewVoting : SocketIoService", roomId);
+
+    this.socket.emit('start-new-voting', roomId);
+  }
+
+  handleRoomDetails(){
+    console.log("executed handleRoomDetails : SocketIoService");
+
+    this.socket.on('room-details',(joinedRoom: Room)=>{
+      console.log("received room details in handleRoomDetails : SocketIoService", joinedRoom);
+      
+      this.roomDataService.setCurrentRoom(joinedRoom);
+    });
+  }
+
+  handleNewUser(){
+    console.log("executed handleNewUser : SocketIoService");
+
+    this.socket.on('new-user',(newUser: User)=>{
+      console.log("received new user in handleNewUser : SocketIoService", newUser);
+
+      this.roomDataService.addNewUser(newUser);
+    });
+  }
+
+  handleReceiveVote(){
+    console.log("executed handleReceiveVote : SocketIoService");
+
+    this.socket.on('receive-vote',( voteDetails: {
+      roomId: string,
+      userId: string,
+      vote: string,
+      votingStatus: boolean
+    }) => {
+      console.log("received voteDetails (receive-vote) in handleReceiveVote : SocketIoService", voteDetails);
+
+      this.roomDataService.updateRoomUserVote(voteDetails);
+    });
+  }
+
+  handleRevokeVote(){
+    console.log("executed handleRevokeVote : SocketIoService");
+
+    this.socket.on('revoke-vote',( voteDetails : {
+      roomId: string,
+      userId: string,
+      vote: string,
+      votingStatus: boolean
+    }) => {
+      console.log("received voteDetails (revoke-vote) in handleRevokeVote : SocketIoService", voteDetails);
+
+      this.roomDataService.updateRoomUserVote(voteDetails);
+    });
+  }
+
+  handleRevealCards(){
+    console.log("executed handleRevealCards : SocketIoService");
+
+    this.socket.on('reveal-cards',()=>{
+      console.log("received reveal-cards in handleRevealCards : SocketIoService");
+
+      this.roomDataService.revealRoomCards();
+    });
+  }
+
+  handleStartNewVoting(){
+    console.log("executed handleStartNewVoting : SocketIoService");
+
+    this.socket.on('start-new-voting',()=>{
+      console.log("received start-new-voting in handleStartNewVoting : SocketIoService");
+
+      // TODO: reset room state
+    });
+  }
+
 }

@@ -11,7 +11,7 @@ import { SocketIoService } from '../Services/socket-io.service';
 })
 export class RoomPageComponent implements OnInit {
   private socketIoService: SocketIoService;
-  private roomDataService: RoomDataService;
+  public roomDataService: RoomDataService;
   private router: Router;
   private activatedRoute: ActivatedRoute;
 
@@ -32,6 +32,9 @@ export class RoomPageComponent implements OnInit {
 
   handleContinue(userName: string){
     let newUserId: string = ""+Math.round(Math.random()*10000000000);
+
+    // store this newUserId locally
+    this.roomDataService.setCurrentUserId(newUserId);
 
     let newUser: User = {
       userId: newUserId,

@@ -1,19 +1,7 @@
 <div class="card-deck-container">
     <div class="card-deck">
-        <div class="card">
-            <p>0</p>
-        </div>
-        <div class="card">
-            <p>1</p>
-        </div>
-        <div class="card">
-            <p>2</p>
-        </div>
-        <div class="card">
-            <p>3</p>
-        </div>
-        <div class="card">
-            <p>5</p>
+        <div *ngFor="let card of cardDeck" class="card">
+            <p>{{card}}</p>
         </div>
     </div>
 </div>
