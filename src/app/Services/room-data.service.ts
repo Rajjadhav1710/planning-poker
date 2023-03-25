@@ -29,6 +29,10 @@ export class RoomDataService {
     this.currentUserId = currentUserId;
   }
 
+  getCurrentUserId(): string {
+    return this.currentUserId;
+  }
+
   setIsCurrentUserAdmin(isCurrentUserAdmin: boolean): void {
     this.isCurrentUserAdmin = isCurrentUserAdmin;
   }

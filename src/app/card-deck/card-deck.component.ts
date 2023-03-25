@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-card-deck',
@@ -7,4 +7,11 @@ import { Component, Input } from '@angular/core';
 })
 export class CardDeckComponent {
   @Input() cardDeck: string[] = [];
+
+  @Output()
+  userVoteEvent: EventEmitter<string> = new EventEmitter<string>();// created custom event
+
+  handleCardClick(vote: string): void {
+    this.userVoteEvent.emit(vote);
+  }
 }

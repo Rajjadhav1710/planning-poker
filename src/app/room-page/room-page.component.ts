@@ -30,7 +30,7 @@ export class RoomPageComponent implements OnInit {
     return ""+this.activatedRoute.snapshot.paramMap.get('room-id');
   }
 
-  handleContinue(userName: string){
+  handleContinue(userName: string): void {
     let newUserId: string = ""+Math.round(Math.random()*10000000000);
 
     // store this newUserId locally
@@ -45,6 +45,41 @@ export class RoomPageComponent implements OnInit {
     }
 
     this.socketIoService.joinRoom(this.getRoomId(), newUser, ()=>{});
+  }
+
+  handleUserVote(vote: string): void {
+    let currentUser: User = this.roomDataService.getCurrentUser();
+
+    let voteDetails = {
+      roomId: this.getRoomId(),
+      userId: currentUser.userId,
+      vote: vote, // will be updated below if required
+      votingStatus: true // will be updated below if required
+    }
+
+    if(currentUser.votingStatus === true){
+      if(vote === currentUser.vote){
+        //revoke vote
+        voteDetails.vote = "";
+        voteDetails.votingStatus = false;
+
+        this.socketIoService.revokeVote(voteDetails);
+      }else{
+        //give vote
+        this.socketIoService.giveVote(voteDetails);
+      }
+    }else{
+      //give vote
+      this.socketIoService.giveVote(voteDetails);
+    }
+  }
+
+  handleRevealCards(): void {
+    this.socketIoService.revealCards(this.getRoomId());
+  }
+
+  handleStartNewVoting(): void {
+    this.socketIoService.startNewVoting(this.getRoomId());
   }
 
   ngOnInit(): void {

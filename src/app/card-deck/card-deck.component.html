@@ -1,7 +1,7 @@
 <div class="card-deck-container">
     <div class="card-deck">
         <div *ngFor="let card of cardDeck" class="card">
-            <p>{{card}}</p>
+            <button (click)="handleCardClick(card)">{{card}}</button>
         </div>
     </div>
 </div>

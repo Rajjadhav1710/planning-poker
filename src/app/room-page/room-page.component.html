@@ -52,10 +52,10 @@
             </div>
             <div class="voting-cards-controls">
                 <div class="reveal-voting-cards-btn-container">
-                    <button>Reveal Cards</button>
+                    <button (click)="handleRevealCards()">Reveal Cards</button>
                 </div>
                 <div class="start-new-voting-btn-container">
-                    <button>Start new voting</button>
+                    <button (click)="handleStartNewVoting()">Start new voting</button>
                 </div>
             </div>
         </div>
@@ -70,7 +70,11 @@
         </div>
     </div>
 
-    <app-card-deck [cardDeck]="roomDataService.getCurrentVotingDeck()"></app-card-deck>
+    <app-card-deck 
+        [cardDeck]="roomDataService.getCurrentVotingDeck()"
+        (userVoteEvent)="handleUserVote($event)"
+    >
+    </app-card-deck>
 
     <div class="voting-analytics-container">
         <div class="voting-analytics-row">
