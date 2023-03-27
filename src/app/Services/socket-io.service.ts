@@ -14,6 +14,9 @@ export class SocketIoService {
   constructor(roomDataService: RoomDataService) { 
     this.socket = io('localhost:3000');
     this.roomDataService = roomDataService;
+
+    //add socket-io handlers
+    this.addHandlers();
   }
 
   createRoom(roomDetails : { 
@@ -70,7 +73,7 @@ export class SocketIoService {
     this.socket.emit('start-new-voting', roomId);
   }
 
-  handleRoomDetails(){
+  handleRoomDetails(): void {
     console.log("executed handleRoomDetails : SocketIoService");
 
     this.socket.on('room-details',(joinedRoom: Room)=>{
@@ -80,7 +83,7 @@ export class SocketIoService {
     });
   }
 
-  handleNewUser(){
+  handleNewUser(): void {
     console.log("executed handleNewUser : SocketIoService");
 
     this.socket.on('new-user',(newUser: User)=>{
@@ -90,7 +93,7 @@ export class SocketIoService {
     });
   }
 
-  handleReceiveVote(){
+  handleReceiveVote(): void {
     console.log("executed handleReceiveVote : SocketIoService");
 
     this.socket.on('receive-vote',( voteDetails: {
@@ -105,7 +108,7 @@ export class SocketIoService {
     });
   }
 
-  handleRevokeVote(){
+  handleRevokeVote(): void {
     console.log("executed handleRevokeVote : SocketIoService");
 
     this.socket.on('revoke-vote',( voteDetails : {
@@ -120,7 +123,7 @@ export class SocketIoService {
     });
   }
 
-  handleRevealCards(){
+  handleRevealCards(): void {
     console.log("executed handleRevealCards : SocketIoService");
 
     this.socket.on('reveal-cards',()=>{
@@ -130,14 +133,24 @@ export class SocketIoService {
     });
   }
 
-  handleStartNewVoting(){
+  handleStartNewVoting(): void {
     console.log("executed handleStartNewVoting : SocketIoService");
 
     this.socket.on('start-new-voting',()=>{
       console.log("received start-new-voting in handleStartNewVoting : SocketIoService");
 
-      // TODO: reset room state
+      // reset room state
+      this.roomDataService.startNewVoting();
     });
+  }
+
+  private addHandlers(): void {
+    this.handleRoomDetails();
+    this.handleNewUser();
+    this.handleReceiveVote();
+    this.handleRevokeVote();
+    this.handleRevealCards();
+    this.handleStartNewVoting();
   }
 
 }

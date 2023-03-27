@@ -8,5 +8,6 @@ import { Component, Input } from '@angular/core';
 export class VotingCardComponent {
   @Input() userName?: string = "";
   @Input() votingStatus?: boolean = false;
+  @Input() vote?: string = "";
   //TODO: Remove '?'
 }

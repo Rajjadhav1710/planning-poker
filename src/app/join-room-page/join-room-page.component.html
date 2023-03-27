@@ -4,10 +4,10 @@
     </div>
     <div class="join-room-inputs-container">
         <div class="room-id-input-container">
-            <input type="text" placeholder="Room Id">
+            <input [(ngModel)]="roomId" type="text" placeholder="Room Id">
         </div>       
     </div>
     <div class="join-room-btn-container">
-        <button class="join-room-btn">Join</button>
+        <button (click)="joinRoom()" class="join-room-btn">Join</button>
     </div>
 </div>

@@ -37,6 +37,7 @@
                         *ngIf="user.userId !== roomDataService.getCurrentUser()?.userId" 
                         [votingStatus]="user.votingStatus" 
                         [userName]="user.userName"
+                        [vote]="user.vote"
                     >
                     </app-voting-card>
                 </div>
@@ -65,6 +66,7 @@
                 <app-voting-card 
                     [votingStatus]="roomDataService.getCurrentUser()?.votingStatus"
                     [userName]="roomDataService.getCurrentUser()?.userName"
+                    [vote]="roomDataService.getCurrentUser()?.vote"
                 ></app-voting-card>
             </div>
         </div>

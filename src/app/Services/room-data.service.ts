@@ -34,7 +34,11 @@ export class RoomDataService {
   }
 
   setIsCurrentUserAdmin(isCurrentUserAdmin: boolean): void {
-    this.isCurrentUserAdmin = isCurrentUserAdmin;
+    if(isCurrentUserAdmin === undefined){
+      this.isCurrentUserAdmin = false;
+    }else{
+      this.isCurrentUserAdmin = isCurrentUserAdmin;
+    }
   }
 
   getIsCurrentUserAdmin(): boolean {
@@ -92,7 +96,45 @@ export class RoomDataService {
     }
   }
 
+  calculateAverageVote(): string {
+    console.log("Executed calculateAverageVote : RoomDataService");
+
+    let totalVote: number = 0; // total of all the votes in the room
+    let totalUsersVotted: number = 0; // count of users who have voted and not given "?" as vote
+    let averageVote: number = 0;
+
+    for (const user of this.room.activeUsers) {
+        if(user.votingStatus === true && user.vote !== "?"){
+            totalUsersVotted++;
+            totalVote += Number(user.vote);
+        }
+    }
+
+    averageVote = totalVote/totalUsersVotted;
+
+    return averageVote.toString();
+  }
+
+  calculateAgreement(): string {
+    return "50%";
+  }
+
   revealRoomCards(): void {
     this.room.allCardsRevealed = true;
+    this.room.averageVote = this.calculateAverageVote();
+    this.room.agreement = this.calculateAgreement();
+  }
+
+  startNewVoting(): void {
+    console.log("Executed startNewVoting : RoomDataService");
+
+    // reset room state
+    for (const user of this.room.activeUsers) {
+        user.votingStatus = false;
+        user.vote = "";
+    }
+    this.room.averageVote = "";
+    this.room.agreement = "";
+    this.room.allCardsRevealed = false;
   }
 }

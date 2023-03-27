@@ -1,0 +1,27 @@
+.room-page-container{
+    border: 2px solid black;
+}
+
+.room-page-navbar{
+    border: 2px solid blue;
+}
+
+.room-page-content-container{
+    border: 2px solid yellow;
+}
+
+.other-users-voting-cards-container{
+    border: 2px solid black;
+}
+
+.voting-cards-controls-container{
+    border: 2px solid red;
+}
+
+.my-voting-card-container{
+    border: 2px solid green;
+}
+
+.voting-analytics-container{
+    border: 2px solid springgreen;
+}
