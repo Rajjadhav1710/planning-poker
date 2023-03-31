@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { RoomPageComponent } from './room-page/room-page.component';
 import { CardDeckComponent } from './card-deck/card-deck.component';
 import { VotingCardComponent } from './voting-card/voting-card.component';
 import { FormsModule } from '@angular/forms';
+import { InvitePlayersModalComponent } from './invite-players-modal/invite-players-modal.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,14 @@ import { FormsModule } from '@angular/forms';
     SingleInputModalComponent,
     RoomPageComponent,
     CardDeckComponent,
-    VotingCardComponent
+    VotingCardComponent,
+    InvitePlayersModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
