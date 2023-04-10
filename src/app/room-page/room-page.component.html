@@ -1,35 +1,41 @@
 <div class="room-page-container">
     <app-single-input-modal 
+        *ngIf="!roomDataService.getCurrentRoom().roomId"
         (modalDataEvent)="handleContinue($event)" 
         heading="Choose your display name"
         placeholder="Your display name"
     ></app-single-input-modal>
 
     <app-invite-players-modal
-        inviteLink="http://localhost:3000"
-        inviteCode="123"    
+        *ngIf="isInvitePlayersModalOpen"
+        [inviteLink]="'http://localhost:4200/'+getRoomId()"
+        [inviteCode]="getRoomId()"
+        (closeInvitePlayersModalEvent)="toggleInvitePlayersModal()"
     ></app-invite-players-modal>
 
     <nav class="room-page-navbar">
         <div class="room-page-navbar-left-items-container">
             <div class="logo">
-                <img src="" alt="logo">
+                <img src="https://cdn-icons-png.flaticon.com/512/86/86494.png" alt="logo">
             </div>
             <div class="room-name-container">
-                <p class="room-name">{{roomDataService.getCurrentRoom().roomName}}</p>
+                <h2 class="room-name">{{roomDataService.getCurrentRoom().roomName}}</h2>
             </div>
         </div>
         <div class="room-page-navbar-right-items-container">
             <div class="user-profile-container">
                 <div class="user-profile-image-container">
-                    <img src="" alt="user profile image">
+                    <img src="https://cdn-icons-png.flaticon.com/512/456/456212.png" alt="user profile image">
                 </div>
                 <div class="username-container">
                     <p class="username">{{roomDataService.getCurrentUser()?.userName}}</p>
                 </div>
             </div>
             <div class="invite-members-btn-container">
-                <button class="invite-members-btn">Invite Members</button>
+                <button 
+                    class="invite-members-btn"
+                    (click)="toggleInvitePlayersModal()"
+                >Invite Members</button>
             </div>
         </div>
     </nav>
@@ -43,6 +49,7 @@
                         [votingStatus]="user.votingStatus" 
                         [userName]="user.userName"
                         [vote]="user.vote"
+                        [allCardsRevealed]="roomDataService.getCurrentRoom().allCardsRevealed"
                     >
                     </app-voting-card>
                 </div>
@@ -53,14 +60,32 @@
 
         <div class="voting-cards-controls-container">
             <div class="room-voting-status-container">
-                <p class="room-voting-status">Pick your cards!</p>
-                <p class="room-voting-status">Picking...</p>
+                <p 
+                    *ngIf="!roomDataService.isAnyActiveUserPickedCard()"
+                    class="room-voting-status"
+                >
+                    Pick your cards!
+                </p>
+                <p 
+                    *ngIf="roomDataService.isAnyActiveUserPickedCard()
+                    &&!roomDataService.getCurrentRoom().allCardsRevealed"
+                    class="room-voting-status"
+                >
+                    Picking...
+                </p>
             </div>
             <div class="voting-cards-controls">
-                <div class="reveal-voting-cards-btn-container">
+                <div 
+                    *ngIf="roomDataService.getIsCurrentUserAdmin()&&roomDataService.isAnyActiveUserPickedCard()
+                    &&!roomDataService.getCurrentRoom().allCardsRevealed"
+                    class="reveal-voting-cards-btn-container"
+                >
                     <button (click)="handleRevealCards()">Reveal Cards</button>
                 </div>
-                <div class="start-new-voting-btn-container">
+                <div 
+                    *ngIf="roomDataService.getCurrentRoom().allCardsRevealed"
+                    class="start-new-voting-btn-container"
+                >
                     <button (click)="handleStartNewVoting()">Start new voting</button>
                 </div>
             </div>
@@ -72,32 +97,37 @@
                     [votingStatus]="roomDataService.getCurrentUser()?.votingStatus"
                     [userName]="roomDataService.getCurrentUser()?.userName"
                     [vote]="roomDataService.getCurrentUser()?.vote"
+                    [allCardsRevealed]="roomDataService.getCurrentRoom().allCardsRevealed"
                 ></app-voting-card>
             </div>
         </div>
     </div>
 
-    <app-card-deck 
+    <app-card-deck
+        *ngIf="!roomDataService.getCurrentRoom().allCardsRevealed"
         [cardDeck]="roomDataService.getCurrentVotingDeck()"
         (userVoteEvent)="handleUserVote($event)"
     >
     </app-card-deck>
 
-    <div class="voting-analytics-container">
+    <div 
+        *ngIf="roomDataService.getCurrentRoom().allCardsRevealed"
+        class="voting-analytics-container"
+    >
         <div class="voting-analytics-row">
             <div class="voting-analytics-col">
-                <p>Average</p>
-                <p>{{roomDataService.getCurrentRoom().averageVote}}</p>
+                <p class="average-label">Average</p>
+                <p class="average-value">{{roomDataService.getCurrentRoom().averageVote}}</p>
             </div>
             <div class="voting-analytics-col">
-                <p>Agreement</p>
-                <p>{{roomDataService.getCurrentRoom().agreement}}</p>
+                <p class="agreement-label">Agreement</p>
+                <p class="agreement-value">{{roomDataService.getCurrentRoom().agreement}}</p>
             </div>
         </div>
-        <div class="voting-analytics-row">
+        <!-- <div class="voting-analytics-row">
             <div class="voting-analytics-col">
                 <app-card-deck></app-card-deck>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>

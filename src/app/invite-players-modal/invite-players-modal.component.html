@@ -1,5 +1,8 @@
 <div class="invite-players-modal-container">
     <div class="invite-players-modal">
+        <div class="invite-players-modal-close-btn-container">
+            <button (click)="closeInvitePlayersModal()">X</button>
+        </div>
         <div class="invite-players-modal-heading">
             <h1>Invite players</h1>
         </div>
@@ -9,16 +12,18 @@
                     <div class="invite-players-with-link-heading">
                         <h3>Share this link with anyone</h3>
                     </div>
-                    <div class="invite-players-link">
-                        <input 
-                            type="text" 
-                            [value]="inviteLink" 
-                            #invitePlayersLink 
-                            readonly
-                        >
-                    </div>
-                    <div class="copy-invite-players-link">
-                        <button (click)="copyContentToClipboard(invitePlayersLink)">copy</button>
+                    <div class="invite-players-with-link-body">
+                        <div class="invite-players-link">
+                            <input 
+                                type="text" 
+                                [value]="inviteLink" 
+                                #invitePlayersLink 
+                                readonly
+                            >
+                        </div>
+                        <div class="copy-invite-players-link">
+                            <button (click)="copyContentToClipboard(invitePlayersLink)">copy</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -27,16 +32,18 @@
                     <div class="invite-players-with-code-heading">
                         <h3>Or Join Through Code</h3>
                     </div>
-                    <div class="invite-players-code">
-                        <input 
-                            type="text" 
-                            [value]="inviteCode" 
-                            #invitePlayersCode
-                            readonly
-                        >
-                    </div>
-                    <div class="copy-invite-players-code">
-                        <button (click)="copyContentToClipboard(invitePlayersCode)">copy</button>
+                    <div class="invite-players-with-code-body">
+                        <div class="invite-players-code">
+                            <input 
+                                type="text" 
+                                [value]="inviteCode" 
+                                #invitePlayersCode
+                                readonly
+                            >
+                        </div>
+                        <div class="copy-invite-players-code">
+                            <button (click)="copyContentToClipboard(invitePlayersCode)">copy</button>
+                        </div>
                     </div>
                 </div>
             </div>

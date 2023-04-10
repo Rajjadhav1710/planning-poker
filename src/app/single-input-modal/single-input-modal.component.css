@@ -1,3 +1,71 @@
 .single-input-modal-container{
-    border: 2px solid hotpink;
+    /* border: 2px solid hotpink; */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(26,41,53,.8);
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.single-input-modal{
+    /* border: 2px solid black; */
+    padding: 5rem;
+    border-radius: 15px;
+    width: 30%;
+    background-color: #fff;
+}
+
+.single-input-modal-input{
+    margin: 3rem 0;
+}
+
+.single-input-modal-input input{
+    width: 91%;
+    padding: 15px;
+    border: 2px solid #e8e9ea;
+    border-radius: 5px;
+    background-color: #fff;
+    outline: none;
+}
+
+.single-input-modal-input input:hover{
+    border-color: #cbcdcd;
+}
+
+.single-input-modal-input input:focus{
+    border-color: #3993ff;
+}
+
+.single-input-modal-submit-btn-container button{
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #3993ff;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.single-input-modal-submit-btn-container button:hover{
+    background-color: #74b3ff;
+}
+
+.single-input-modal-submit-btn-container button:active,
+.single-input-modal-submit-btn-container button:focus{
+    outline-width: 3px;
+    outline-style: solid;
+    outline-color: #74b3ff6e;
+}
+
+.single-input-modal-submit-btn-container button:active{
+    background-color: #055bc5;
 }

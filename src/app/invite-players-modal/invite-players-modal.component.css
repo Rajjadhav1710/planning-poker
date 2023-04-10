@@ -1,0 +1,152 @@
+.invite-players-modal-container{
+    /* border: 2px solid red; */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(26,41,53,.8);
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.invite-players-modal{
+    /* border: 2px solid black; */
+    width: 40rem;
+    border-radius: 1rem;
+    padding: 3rem;
+    background-color: #fff;
+}
+
+.invite-players-modal-close-btn-container{
+    text-align: right;
+}
+
+.invite-players-modal-close-btn-container button{
+    padding: 10px 15px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #3993ff;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.invite-players-modal-close-btn-container button:hover{
+    background-color: #74b3ff;
+}
+
+.invite-players-modal-close-btn-container button:active,
+.invite-players-modal-close-btn-container button:focus{
+    outline-width: 3px;
+    outline-style: solid;
+    outline-color: #74b3ff6e;
+}
+
+.invite-players-modal-close-btn-container button:active{
+    background-color: #055bc5;
+}
+
+.invite-players-modal-heading{
+    margin: 2rem 0;
+}
+
+.invite-players-with-link-container,
+.invite-players-with-code-container,
+.invite-players-with-email-container
+{
+    margin: 1rem 0;
+}
+
+.invite-players-with-link-body,.invite-players-with-code-body{
+    display: flex;
+    align-items: center;
+}
+
+.invite-players-link,.invite-players-code{
+    flex: 1;
+}
+
+.invite-players-with-email-heading{
+    margin-bottom: 0.5rem;
+}
+
+.invite-players-link input,
+.invite-players-code input,
+.sender-email input,
+.receiver-email input
+{
+    padding: 15px;
+    border: 2px solid #e8e9ea;
+    border-radius: 5px;
+    width: 95%;
+    margin: 5px 0;
+    outline: none;
+}
+
+.invite-players-link input:hover,
+.invite-players-code input:hover,
+.sender-email input:hover,
+.receiver-email input:hover{
+    border-color: #cbcdcd;
+}
+
+.invite-players-link input:focus,
+.invite-players-code input:focus,
+.sender-email input:focus,
+.receiver-email input:focus{
+    border-color: #3993ff;
+}
+
+.send-email-btn-container{
+    margin: 1rem 0;
+}
+
+.copy-invite-players-link button,
+.copy-invite-players-code button,
+.send-email-btn-container input
+{
+    padding: 15px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    width: 100%;
+    margin: 5px 0;
+    cursor: pointer;
+    background-color: #3993ff;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.copy-invite-players-link button,
+.copy-invite-players-code button{
+    margin-left: 0.5rem;
+}
+
+.copy-invite-players-link button:hover,
+.copy-invite-players-code button:hover,
+.send-email-btn-container input:hover{
+    background-color: #74b3ff;
+}
+
+.copy-invite-players-link button:active,
+.copy-invite-players-code button:active,
+.send-email-btn-container input:active,
+.copy-invite-players-link button:focus,
+.copy-invite-players-code button:focus,
+.send-email-btn-container input:focus{
+    outline-width: 3px;
+    outline-style: solid;
+    outline-color: #74b3ff6e;
+}
+
+.copy-invite-players-link button:active,
+.copy-invite-players-code button:active,
+.send-email-btn-container input:active{
+    background-color: #055bc5;
+}

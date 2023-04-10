@@ -1,7 +1,13 @@
 <div class="card-deck-container">
+    <div class="card-deck-heading">
+        <p>Choose your card 👇</p>
+    </div>
     <div class="card-deck">
         <div *ngFor="let card of cardDeck" class="card">
-            <button (click)="handleCardClick(card)">{{card}}</button>
+            <button 
+                (click)="handleCardClick(card)"
+                [ngClass]="{'selected-card': card === selectedCard}"
+            >{{card}}</button>
         </div>
     </div>
 </div>

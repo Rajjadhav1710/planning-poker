@@ -1,22 +1,30 @@
 <div class="new-room-page-container">
-    <div class="new-room-page-heading">
-        <h1>Choose a name and a voting system for your room</h1>
+    <div class="new-room-page-navbar">
+        <img src="https://dropito.netlify.app/static/media/dropito-logo-4.c625a92d73c6853fa1c9.png" alt="logo">
+        <h2>Create room</h2>
     </div>
-    <div class="new-room-inputs-container">
-        <div class="new-room-name-input-container">
-            <input [(ngModel)]="roomName" type="text" placeholder="Room's Name">
+    <div class="new-room-page-body">
+        <div class="new-room-page-heading">
+            <h2>Choose a name and a voting system for your room</h2>
         </div>
-        <div class="new-room-voting-system-input-container">
-            <label for="voting_system_select">Voting System </label>
+        <div class="new-room-inputs-container">
+            <div class="new-room-name-input-container">
+                <label for="room_name">Room Name </label>
 
-            <select [(ngModel)]="votingSystem" name="" id="voting_system_select">
-                <option value="fibonacci">Fibonacci ( 0, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ? )</option>
-                <!-- <option value=""></option> -->
-                <!-- <option value=""></option> -->
-            </select>
+                <input [(ngModel)]="roomName" type="text" placeholder="Room's Name" id="room_name">
+            </div>
+            <div class="new-room-voting-system-input-container">
+                <label for="voting_system_select">Voting System </label>
+    
+                <select [(ngModel)]="votingSystem" name="" id="voting_system_select">
+                    <option value="fibonacci">Fibonacci ( 0, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ? )</option>
+                    <!-- <option value=""></option> -->
+                    <!-- <option value=""></option> -->
+                </select>
+            </div>
         </div>
-    </div>
-    <div class="create-room-btn-container">
-        <button (click)="createRoom()" class="create-room-btn">Create Room</button>
+        <div class="create-room-btn-container">
+            <button (click)="createRoom()" class="create-room-btn">Create Room</button>
+        </div>
     </div>
 </div>

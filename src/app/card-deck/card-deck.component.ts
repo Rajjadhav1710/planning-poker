@@ -11,7 +11,15 @@ export class CardDeckComponent {
   @Output()
   userVoteEvent: EventEmitter<string> = new EventEmitter<string>();// created custom event
 
+  selectedCard: string = "";
+
   handleCardClick(vote: string): void {
     this.userVoteEvent.emit(vote);
+
+    if(this.selectedCard !== "" && this.selectedCard === vote){
+      this.selectedCard = "";
+    }else{
+      this.selectedCard = vote;
+    }
   }
 }

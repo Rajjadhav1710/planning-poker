@@ -137,4 +137,13 @@ export class RoomDataService {
     this.room.agreement = "";
     this.room.allCardsRevealed = false;
   }
+
+  isAnyActiveUserPickedCard(): boolean {
+    for(const user of this.room.activeUsers){
+      if(user.votingStatus === true){
+        return true;
+      }
+    }
+    return false;
+  }
 }

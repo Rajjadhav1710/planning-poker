@@ -15,6 +15,8 @@ export class RoomPageComponent implements OnInit {
   private router: Router;
   private activatedRoute: ActivatedRoute;
 
+  public isInvitePlayersModalOpen: boolean = false;
+
   constructor(socketIoService: SocketIoService, roomDataService: RoomDataService, router: Router, activatedRoute: ActivatedRoute) {
     this.socketIoService = socketIoService;
     this.roomDataService = roomDataService;
@@ -26,7 +28,7 @@ export class RoomPageComponent implements OnInit {
     this.roomDataService.setIsCurrentUserAdmin(this.router.getCurrentNavigation()?.extras?.state?.isAdmin);
   }
 
-  private getRoomId(): string {
+  getRoomId(): string {
     return ""+this.activatedRoute.snapshot.paramMap.get('room-id');
   }
 
@@ -80,6 +82,10 @@ export class RoomPageComponent implements OnInit {
 
   handleStartNewVoting(): void {
     this.socketIoService.startNewVoting(this.getRoomId());
+  }
+
+  toggleInvitePlayersModal(): void {
+    this.isInvitePlayersModalOpen = !this.isInvitePlayersModalOpen;
   }
 
   ngOnInit(): void {

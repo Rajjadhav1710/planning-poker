@@ -9,5 +9,6 @@ export class VotingCardComponent {
   @Input() userName?: string = "";
   @Input() votingStatus?: boolean = false;
   @Input() vote?: string = "";
+  @Input() allCardsRevealed: boolean = false;
   //TODO: Remove '?'
 }

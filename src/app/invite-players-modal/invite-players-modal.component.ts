@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { EmailService } from '../Services/email.service';
 
 @Component({
@@ -9,6 +9,9 @@ import { EmailService } from '../Services/email.service';
 export class InvitePlayersModalComponent {
   @Input() inviteLink: string = "";
   @Input() inviteCode: string = "";
+
+  @Output()
+  closeInvitePlayersModalEvent: EventEmitter<any> = new EventEmitter<any>();// created custom event
 
   private emailService: EmailService;
 
@@ -47,5 +50,9 @@ export class InvitePlayersModalComponent {
         console.log('done');
       }
     });
+  }
+
+  closeInvitePlayersModal(){
+    this.closeInvitePlayersModalEvent.emit();
   }
 }

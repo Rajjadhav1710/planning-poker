@@ -1,8 +1,18 @@
 <div class="voting-card-container">
-    <div class="voting-card-status">
-        <p>{{votingStatus}}</p>
+    <div 
+        *ngIf="!allCardsRevealed"
+        class="voting-status"
+        [ngClass]="{
+            'voting-status-true':votingStatus === true,
+            'voting-status-false':votingStatus === false
+        }"
+    >
+        <!-- <p>{{votingStatus}}</p> -->
     </div>
-    <div class="vote-container">
+    <div
+        *ngIf="allCardsRevealed"
+        class="vote-container"
+    >
         <p>{{vote}}</p>
     </div>
     <div class="user-details-container">

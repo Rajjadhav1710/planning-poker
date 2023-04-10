@@ -1,0 +1,105 @@
+.new-room-page-container{
+    /* border: 2px solid greenyellow; */
+    min-height: 100vh;
+}
+
+.new-room-page-navbar{
+    display: flex;
+    align-items: center;
+    padding: 30px;
+}
+
+.new-room-page-navbar img{
+    width: 12rem;
+    height: 2.5rem;
+    margin-right: 1rem;
+}
+
+.new-room-page-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 11vh;
+    padding-left: 25vw;
+    padding-right: 25vw;
+}
+
+.new-room-page-heading,.new-room-inputs-container,.create-room-btn-container{
+    width: 100%;
+}
+
+.new-room-page-heading{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.new-room-name-input-container{
+    margin-bottom: 1rem;
+}
+
+.new-room-name-input-container label,
+.new-room-voting-system-input-container label{
+    font-weight: 600;
+}
+
+.new-room-name-input-container input{
+    padding: 15px;
+    width: 96%;
+    margin-top: 5px;
+    border: 2px solid #e8e9ea;
+    border-radius: 5px;
+    outline: none;
+}
+
+.new-room-voting-system-input-container select{
+    padding: 15px;
+    width: 100%;
+    margin-top: 5px;
+    border: 2px solid #e8e9ea;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+
+.new-room-name-input-container input:hover,
+.new-room-voting-system-input-container select:hover{
+    border-color: #cbcdcd;
+}
+
+.new-room-name-input-container input:focus,
+.new-room-voting-system-input-container select:focus{
+    border-color: #3993ff;
+}
+
+.create-room-btn-container{
+    margin-top: 3rem;
+}
+
+.create-room-btn-container button{
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #3993ff;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.create-room-btn-container button:hover{
+    background-color: #74b3ff;
+}
+
+.create-room-btn-container button:active,
+.create-room-btn-container button:focus{
+    outline-width: 3px;
+    outline-style: solid;
+    outline-color: #74b3ff6e;
+}
+
+.create-room-btn-container button:active{
+    background-color: #055bc5;
+}
