@@ -19,6 +19,10 @@ export class SocketIoService {
     this.addHandlers();
   }
 
+  getSocketId(): string {
+    return this.socket.id;
+  }
+
   createRoom(roomDetails : { 
     roomId: string, 
     roomName: string, 
@@ -144,6 +148,16 @@ export class SocketIoService {
     });
   }
 
+  handleRemoveUser(): void {
+    console.log("executed handleRemoveUser : SocketIoService");
+
+    this.socket.on('remove-user',(userId: string)=>{
+      console.log("received remove-user in handleRemoveUser : SocketIoService");
+
+      this.roomDataService.removeUser(userId);
+    });
+  }
+
   private addHandlers(): void {
     this.handleRoomDetails();
     this.handleNewUser();
@@ -151,6 +165,7 @@ export class SocketIoService {
     this.handleRevokeVote();
     this.handleRevealCards();
     this.handleStartNewVoting();
+    this.handleRemoveUser();
   }
 
 }

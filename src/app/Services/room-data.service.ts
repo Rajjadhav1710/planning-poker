@@ -146,4 +146,28 @@ export class RoomDataService {
     }
     return false;
   }
+
+  removeUser(userId: string): void {
+    this.room.activeUsers = this.room.activeUsers.filter(user => user.userId !== userId);
+
+    let isThereAnyAdmin: boolean = false;
+
+    for (const user of this.room.activeUsers) {
+        if(user.isAdmin){
+            isThereAnyAdmin = true;
+            break;
+        }
+    }
+
+    if(!isThereAnyAdmin){
+        //Randomly choose any one as admin
+        // let userIndex: number = Math.floor(Math.random() * this.rooms[roomIndex].activeUsers.length);
+
+        this.room.activeUsers[0].isAdmin = true;
+
+        if(this.room.activeUsers[0].userId === this.currentUserId){
+          this.isCurrentUserAdmin = true;
+        }
+    }
+  }
 }

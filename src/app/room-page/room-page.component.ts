@@ -33,7 +33,8 @@ export class RoomPageComponent implements OnInit {
   }
 
   handleContinue(userName: string): void {
-    let newUserId: string = ""+Math.round(Math.random()*10000000000);
+    // let newUserId: string = ""+Math.round(Math.random()*10000000000);
+    let newUserId: string = this.socketIoService.getSocketId();
 
     // store this newUserId locally
     this.roomDataService.setCurrentUserId(newUserId);
@@ -86,6 +87,13 @@ export class RoomPageComponent implements OnInit {
 
   toggleInvitePlayersModal(): void {
     this.isInvitePlayersModalOpen = !this.isInvitePlayersModalOpen;
+  }
+
+  handleLeaveRoom(): void {
+    this.router.navigateByUrl('')
+      .then(() => {
+        window.location.reload();
+      });
   }
 
   ngOnInit(): void {
