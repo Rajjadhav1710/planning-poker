@@ -130,10 +130,12 @@
                 <p class="agreement-value">{{roomDataService.getCurrentRoom().agreement}}</p>
             </div>
         </div>
-        <!-- <div class="voting-analytics-row">
+        <div class="voting-analytics-row">
             <div class="voting-analytics-col">
-                <app-card-deck></app-card-deck>
+                <app-card-deck-with-frequency
+                    [cardDeck]="roomDataService.getVoteWithFrequency()"
+                ></app-card-deck-with-frequency>
             </div>
-        </div> -->
+        </div>
     </div>
 </div>

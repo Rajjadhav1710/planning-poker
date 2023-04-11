@@ -170,4 +170,34 @@ export class RoomDataService {
         }
     }
   }
+
+  getVoteWithFrequency(): {
+    vote: string;
+    frequency: number;
+  }[]{
+    let result: {
+      vote: string;
+      frequency: number;
+    }[] = [];
+
+    for(let i=0; i<this.room.activeUsers.length; i++){
+      if(this.room.activeUsers[i].votingStatus === true){
+        let searchedItem: {
+          vote: string;
+          frequency: number;
+        } | undefined = result.find( r => r.vote === this.room.activeUsers[i].vote);
+
+        if(searchedItem){
+          searchedItem.frequency++;
+        }else{
+          result.push({
+            vote: this.room.activeUsers[i].vote,
+            frequency: 1
+          });
+        }
+      }
+    }
+
+    return result;
+  }
 }

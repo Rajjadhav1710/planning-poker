@@ -1,0 +1,8 @@
+<div class="card-deck-with-frequency-container">
+    <div class="card-deck-with-frequency">
+        <div *ngFor="let card of cardDeck" class="card-with-frequency">
+            <button>{{card.vote}}</button>
+            <p>{{card.frequency}}</p>
+        </div>
+    </div>
+</div>
