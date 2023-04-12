@@ -112,11 +112,54 @@ export class RoomDataService {
 
     averageVote = totalVote/totalUsersVotted;
 
-    return averageVote.toString();
+    return averageVote.toFixed(2);
+  }
+
+  // returns coefficient of variation
+  getCV(voteWithFrequencyArray: { // calculates disagreement in percentage
+    vote: string; // X
+    frequency: number; // f
+  }[]): number {
+    let sum_f: number = 0;
+    let sum_fX: number = 0;
+    
+    for (const item of voteWithFrequencyArray) {
+      if(item.vote !== '?'){
+        sum_f += item.frequency;
+        sum_fX += (Number(item.vote)*item.frequency);
+      }
+    }
+
+    let mean: number = sum_fX / sum_f;
+    console.log(mean);    
+    let sum_fx2: number = 0;
+
+    for (const item of voteWithFrequencyArray) {
+      if(item.vote !== '?'){
+        sum_fx2 += ((Number(item.vote)-mean)*(Number(item.vote)-mean)*item.frequency);
+      }
+    }
+
+    let standardDeviation: number = Math.sqrt(sum_fx2/sum_f);
+
+    let coefficientOfVariation: number = (standardDeviation / mean)*100;
+    console.log(coefficientOfVariation.toFixed(2));
+
+    return Number(coefficientOfVariation.toFixed(2));
   }
 
   calculateAgreement(): string {
-    return "50%";
+    console.log("Executed calculateAgreement : RoomDataService");
+
+    let voteWithFrequencyArray: {
+      vote: string; // X
+      frequency: number; // f
+    }[] = this.getVoteWithFrequency();
+
+    console.log(voteWithFrequencyArray);
+
+    return ""+(100 - this.getCV(voteWithFrequencyArray));
+    // return "50%";
   }
 
   revealRoomCards(): void {
