@@ -14,6 +14,7 @@ import { VotingCardComponent } from './voting-card/voting-card.component';
 import { FormsModule } from '@angular/forms';
 import { InvitePlayersModalComponent } from './invite-players-modal/invite-players-modal.component';
 import { CardDeckWithFrequencyComponent } from './card-deck-with-frequency/card-deck-with-frequency.component';
+import { RoomNotFoundPageComponent } from './room-not-found-page/room-not-found-page.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CardDeckWithFrequencyComponent } from './card-deck-with-frequency/card-
     CardDeckComponent,
     VotingCardComponent,
     InvitePlayersModalComponent,
-    CardDeckWithFrequencyComponent
+    CardDeckWithFrequencyComponent,
+    RoomNotFoundPageComponent
   ],
   imports: [
     BrowserModule,

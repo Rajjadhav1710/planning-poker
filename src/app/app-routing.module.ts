@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './home-page/home-page.component';
 import { JoinRoomPageComponent } from './join-room-page/join-room-page.component';
 import { NewRoomPageComponent } from './new-room-page/new-room-page.component';
+import { RoomNotFoundPageComponent } from './room-not-found-page/room-not-found-page.component';
 import { RoomPageComponent } from './room-page/room-page.component';
 
 const routes: Routes = [
@@ -10,6 +11,7 @@ const routes: Routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'new-room', component: NewRoomPageComponent },
   { path: 'join-room', component: JoinRoomPageComponent },
+  { path: 'room-not-found', component: RoomNotFoundPageComponent },
   { path: ':room-id', component: RoomPageComponent },
   { path: '**', redirectTo: '/home'},
 ];

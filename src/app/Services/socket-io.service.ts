@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { io, Socket } from 'socket.io-client';
 import { Room } from '../Models/room.model';
 import { User } from '../Models/user.model';
@@ -10,10 +11,12 @@ import { RoomDataService } from './room-data.service';
 export class SocketIoService {
   private socket: Socket;
   private roomDataService: RoomDataService;
+  private router: Router;
 
-  constructor(roomDataService: RoomDataService) { 
+  constructor(roomDataService: RoomDataService, router: Router) { 
     this.socket = io('localhost:3000');
     this.roomDataService = roomDataService;
+    this.router = router;
 
     //add socket-io handlers
     this.addHandlers();
@@ -158,6 +161,19 @@ export class SocketIoService {
     });
   }
 
+  handleRoomNotFound(): void {
+    console.log("executed handleRoomNotFound : SocketIoService");
+
+    this.socket.on('room-not-found',()=>{
+      console.log("received room-not-found in handleRoomNotFound : SocketIoService");
+
+      this.router.navigateByUrl('room-not-found')
+        .then(() => { // should i include reload here ? 
+          window.location.reload();
+        });
+    });
+  }
+
   private addHandlers(): void {
     this.handleRoomDetails();
     this.handleNewUser();
@@ -166,6 +182,7 @@ export class SocketIoService {
     this.handleRevealCards();
     this.handleStartNewVoting();
     this.handleRemoveUser();
+    this.handleRoomNotFound();
   }
 
 }
