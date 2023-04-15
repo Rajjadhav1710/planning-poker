@@ -32,7 +32,10 @@ export class RoomPageComponent implements OnInit {
     return ""+this.activatedRoute.snapshot.paramMap.get('room-id');
   }
 
-  handleContinue(userName: string): void {
+  handleContinue(userInfo: {
+    userName: string;
+    profileImageUrl: string
+  }): void {
     // let newUserId: string = ""+Math.round(Math.random()*10000000000);
     let newUserId: string = this.socketIoService.getSocketId();
 
@@ -41,10 +44,11 @@ export class RoomPageComponent implements OnInit {
 
     let newUser: User = {
       userId: newUserId,
-      userName: userName,
+      userName: userInfo.userName === "" ? "User" : userInfo.userName,
       votingStatus: false,
       vote: "",
-      isAdmin: this.roomDataService.getIsCurrentUserAdmin()
+      isAdmin: this.roomDataService.getIsCurrentUserAdmin(),
+      profileImageUrl: userInfo.profileImageUrl === "" ? "https://cdn-icons-png.flaticon.com/512/456/456212.png" : userInfo.profileImageUrl
     }
 
     this.socketIoService.joinRoom(this.getRoomId(), newUser, ()=>{});

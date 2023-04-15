@@ -25,7 +25,10 @@
         <div class="room-page-navbar-right-items-container">
             <div class="user-profile-container">
                 <div class="user-profile-image-container">
-                    <img src="https://cdn-icons-png.flaticon.com/512/456/456212.png" alt="user profile image">
+                    <!-- <img src="https://cdn-icons-png.flaticon.com/512/456/456212.png" alt="user profile image"> -->
+                    <img [src]="
+                    roomDataService.getCurrentUser() !== undefined ? roomDataService.getCurrentUser()?.profileImageUrl : 
+                    'https://cdn-icons-png.flaticon.com/512/456/456212.png' " alt="user profile image">
                 </div>
                 <div class="username-container">
                     <p class="username">{{roomDataService.getCurrentUser()?.userName}}</p>

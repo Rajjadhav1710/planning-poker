@@ -21,8 +21,9 @@ export class NewRoomPageComponent {
 
   createRoom(): void{
     let roomDetails = { 
-      roomId: ""+Math.round(Math.random()*10000000000), 
-      roomName: this.roomName, 
+      // roomId: ""+Math.round(Math.random()*10000000000),
+      roomId: this.generateRoomId(), 
+      roomName: this.roomName === "" ? "Planning Poker Room" : this.roomName, 
       votingSystem: this.votingSystem 
     };
 
@@ -34,5 +35,21 @@ export class NewRoomPageComponent {
         }
       });
     });
+  }
+
+  getRandInteger(min: number, max: number): number { // both min and max included
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+  }
+  
+  generateRoomId(): string {
+      let roomId = "";
+      for(let i=0;i<3;i++){
+          if(i==2){
+              roomId += String.fromCharCode(this.getRandInteger(97,122),this.getRandInteger(97,122),this.getRandInteger(97,122));
+          }else{
+              roomId += (String.fromCharCode(this.getRandInteger(97,122),this.getRandInteger(97,122),this.getRandInteger(97,122))) + "-" ;   
+          }
+      }
+      return roomId;
   }
 }

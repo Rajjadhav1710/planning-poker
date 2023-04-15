@@ -42,6 +42,12 @@
     border-color: #3993ff;
 }
 
+.single-input-modal-img-preview img{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+}
+
 .single-input-modal-submit-btn-container button{
     width: 100%;
     padding: 15px;

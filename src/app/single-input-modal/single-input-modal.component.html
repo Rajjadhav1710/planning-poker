@@ -9,6 +9,14 @@
         <div class="single-input-modal-input">
             <input [(ngModel)]="modalData" type="text" [placeholder]="placeholder">
         </div>
+        <div class="single-input-modal-img-input-container">
+            <div class="single-input-modal-img-input">
+                <input type="file" accept="image/*" (change)="handlUserImage($event)">
+            </div>
+            <div class="single-input-modal-img-preview">
+                <img [src]="userImageSrc" alt="user image">
+            </div>
+        </div>
         <div class="single-input-modal-submit-btn-container">
             <button (click)="handleContinue()">Continue</button>
         </div>
