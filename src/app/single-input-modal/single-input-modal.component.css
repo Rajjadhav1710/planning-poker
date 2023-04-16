@@ -4,7 +4,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(26,41,53,.8);
+    /* background-color: rgba(26,41,53,.8); */
+    background-color: rgba(52,58,70,0.8);
     position: fixed;
     width: 100vw;
     top: 0;
@@ -18,7 +19,12 @@
     padding: 5rem;
     border-radius: 15px;
     width: 30%;
-    background-color: #fff;
+    /* background-color: #fff; */
+    background-color: rgb(35, 39, 47);
+}
+
+.single-input-modal-heading h2{
+    color: rgb(20, 158, 202);
 }
 
 .single-input-modal-img-input-container{
@@ -37,35 +43,41 @@
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
-    border: 3px solid #cbcdcd;
+    /* border: 3px solid #cbcdcd; */
+    border: 3px solid rgb(77, 93, 114);
 }
 
 .single-input-modal-img-input input::file-selector-button{
     padding: 6px;
     margin: 2px;
     margin-right: 0.5rem;
-    border: 2px solid #fff;
+    /* border: 2px solid #fff; */
+    border: 2px solid rgb(35, 39, 47);
     border-radius: 5px;
     cursor: pointer;
-    background-color: #3993ff;
+    /* background-color: #3993ff; */
+    background-color: rgb(8, 126, 164);
     color: #fff;
     font-size: 1rem;
     letter-spacing: 0.02em;
 }
 
 .single-input-modal-img-input input::file-selector-button:hover{
-    background-color: #74b3ff;
+    /* background-color: #74b3ff; */
+    background-color: rgba(8, 126, 164, 0.8);
 }
 
 .single-input-modal-img-input input::file-selector-button:active,
 .single-input-modal-img-input input::file-selector-button:focus{
     outline-width: 3px;
     outline-style: solid;
-    outline-color: #74b3ff6e;
+    /* outline-color: #74b3ff6e; */
+    outline-color: rgb(8, 126, 164);
 }
 
 .single-input-modal-img-input input::file-selector-button:active{
-    background-color: #055bc5;
+    /* background-color: #055bc5; */
+    background-color: rgba(8, 126, 164, 0.8);
 }
 
 .single-input-modal-input{
@@ -77,27 +89,34 @@
     width: 91%;
     padding: 15px;
     font-size: 1rem;
-    border: 2px solid #e8e9ea;
+    /* border: 2px solid #e8e9ea; */
+    border: 2px solid rgb(59, 71, 87);
     border-radius: 5px;
-    background-color: #fff;
+    /* background-color: #fff; */
+    background-color: rgba(120,131,155,.2);
+    color: rgb(246, 247, 249);
     outline: none;
 }
 
 .single-input-modal-input input:hover{
-    border-color: #cbcdcd;
+    /* border-color: #cbcdcd; */
+    border-color: rgb(77, 93, 114);
 }
 
 .single-input-modal-input input:focus{
-    border-color: #3993ff;
+    /* border-color: #3993ff; */
+    border-color: #087ea4;
 }
 
 .single-input-modal-submit-btn-container button{
     width: 100%;
     padding: 15px;
-    border: 2px solid #fff;
+    /* border: 2px solid #fff; */
+    border: 2px solid rgb(35, 39, 47);
     border-radius: 5px;
     cursor: pointer;
-    background-color: #3993ff;
+    /* background-color: #3993ff; */
+    background-color: rgb(8, 126, 164);
     color: #fff;
     font-size: 1rem;
     font-weight: 700;
@@ -105,16 +124,46 @@
 }
 
 .single-input-modal-submit-btn-container button:hover{
-    background-color: #74b3ff;
+    /* background-color: #74b3ff; */
+    background-color: rgba(8, 126, 164, 0.8);
 }
 
 .single-input-modal-submit-btn-container button:active,
 .single-input-modal-submit-btn-container button:focus{
     outline-width: 3px;
     outline-style: solid;
-    outline-color: #74b3ff6e;
+    /* outline-color: #74b3ff6e; */
+    outline-color: rgb(8, 126, 164);
 }
 
 .single-input-modal-submit-btn-container button:active{
-    background-color: #055bc5;
+    /* background-color: #055bc5; */
+    background-color: rgba(8, 126, 164, 0.8);
+}
+
+/* Light Mode Styles */
+.single-input-modal{
+    background-color: #fff;
+}
+
+.single-input-modal-img-input input::file-selector-button{
+    border: 2px solid #fff;
+}
+
+.single-input-modal-input input{
+    border: 2px solid #e8e9ea;
+    background-color: #fff;
+    color: rgb(35, 39, 47);
+}
+
+.single-input-modal-input input:hover{
+    border-color: #cbcdcd;
+}
+
+.single-input-modal-input input:focus{
+    border-color: #087ea4;
+}
+
+.single-input-modal-submit-btn-container button{
+    border: 2px solid #fff;
 }

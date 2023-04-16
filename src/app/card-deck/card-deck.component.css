@@ -7,6 +7,10 @@
     font-size: 1.1rem;
 }
 
+.card-deck-heading p{
+    color: rgb(20, 158, 202);
+}
+
 .card-deck{
     display: flex;
     justify-content: center;
@@ -21,18 +25,34 @@
     height: 6rem;
     border-radius: 5px;
     cursor: pointer;
-    background-color: #fff;
-    border: 2px solid #3993ff;
-    color: #3993ff;
+    /* background-color: #fff; */
+    background-color: rgba(88, 175, 223, 0.1);
+    /* border: 2px solid #3993ff; */
+    border: 2px solid rgb(20, 158, 202);
+    /* color: #3993ff; */
+    color: rgb(20, 158, 202);
     font-size: 1rem;
     font-weight: 700;
 }
 
 .card button:hover{
-    background-color: #ebf4ff;
+    /* background-color: #ebf4ff; */
+    background-color: rgba(88, 175, 223,0.4)
 }
 
 .card .selected-card,.card .selected-card:hover{
-    background-color: #3993ff;
+    /* background-color: #3993ff;*/
+    background-color: rgb(20, 158, 202);
     color: #fff;
+}
+
+/* Light Mode Styles */
+
+.card button{
+    background-color: rgb(230, 247, 255);
+    color: rgb(8, 126, 164);
+}
+
+.card button:hover{
+    /* background-color: rgb(246, 247, 249) */
 }

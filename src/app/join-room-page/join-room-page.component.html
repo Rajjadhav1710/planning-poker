@@ -1,14 +1,20 @@
 <div class="join-room-page-container">
-    <div class="join-room-page-heading">
-        <h1>Join Room</h1>
+    <div class="join-room-page-navbar">
+        <img src="../../assets/logo-icon.svg" alt="logo">
+        <h2>Join Room</h2>
     </div>
-    <div class="join-room-inputs-container">
-        <div class="room-id-input-container">
-            <label for="room_id">Room Id</label>
-            <input [(ngModel)]="roomId" type="text" id="room_id" placeholder="Room Id">
-        </div>       
-    </div>
-    <div class="join-room-btn-container">
-        <button (click)="joinRoom()" class="join-room-btn">Join</button>
+    <div class="join-room-page-content">
+        <div class="join-room-page-heading">
+            <h1>Join Room</h1>
+        </div>
+        <div class="join-room-inputs-container">
+            <div class="room-id-input-container">
+                <label for="room_id">Room Id</label>
+                <input [(ngModel)]="roomId" type="text" id="room_id" placeholder="Room Id">
+            </div>       
+        </div>
+        <div class="join-room-btn-container">
+            <button (click)="joinRoom()" class="join-room-btn">Join</button>
+        </div>    
     </div>
 </div>

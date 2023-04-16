@@ -16,10 +16,14 @@ export class JoinRoomPageComponent {
   }
 
   joinRoom(): void {
-    this.router.navigate([`${this.roomId}`],{
-      state: {
-        isAdmin: false
-      }
-    });
+    if(this.roomId === ""){
+      this.router.navigateByUrl('room-not-found');
+    }else{
+      this.router.navigate([`${this.roomId}`],{
+        state: {
+          isAdmin: false
+        }
+      });
+    }
   }
 }

@@ -1,6 +1,6 @@
 <div class="new-room-page-container">
     <div class="new-room-page-navbar">
-        <img src="https://dropito.netlify.app/static/media/dropito-logo-4.c625a92d73c6853fa1c9.png" alt="logo">
+        <img src="../../assets/logo-icon.svg" alt="logo">
         <h2>Create room</h2>
     </div>
     <div class="new-room-page-body">
@@ -11,7 +11,7 @@
             <div class="new-room-name-input-container">
                 <label for="room_name">Room Name </label>
 
-                <input [(ngModel)]="roomName" type="text" placeholder="Room's Name" id="room_name">
+                <input [(ngModel)]="roomName" type="text" placeholder="Room's Name" id="room_name" autocomplete="off">
             </div>
             <div class="new-room-voting-system-input-container">
                 <label for="voting_system_select">Voting System </label>

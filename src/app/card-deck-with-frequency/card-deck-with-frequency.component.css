@@ -11,15 +11,25 @@
     width: 4rem;
     height: 6rem;
     border-radius: 5px;
-    cursor: pointer;
-    background-color: #fff;
-    border: 2px solid #1a2935;
-    color: #1a2935;
+    background-color: rgb(20, 158, 202);
+    border: 2px solid rgb(35, 39, 47);
+    color: rgb(246, 247, 249);
     font-size: 1rem;
     font-weight: 700;
 }
 
 .card-with-frequency p{
-    color: #1a2935;
+    /* color: #1a2935; */
+    color: rgb(246, 247, 249);
     margin-top: 5px;
+}
+
+/* Light Mode Styles */
+
+.card-with-frequency button{
+    border: 2px solid #fff;
+}
+
+.card-with-frequency p{
+    color: #1a2935;
 }

@@ -1,11 +1,32 @@
 .join-room-page-container{
     min-height: 100vh;
-    border: 1px solid greenyellow;
+    background-color: rgb(35, 39, 47);
+}
+
+.join-room-page-navbar{
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    background-color: rgb(55, 65, 81);
+}
+
+.join-room-page-navbar img{
+    /* width: 12rem; */
+    height: 3rem;
+    margin-right: 1rem;
+}
+
+.join-room-page-navbar h2{
+    color: rgb(246, 247, 249);
+}
+
+.join-room-page-content{
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding-left: 25vw;
     padding-right: 25vw;
+    margin-top: 9rem;
 }
 
 .join-room-page-heading{
@@ -13,8 +34,13 @@
     text-align: center;
 }
 
+.join-room-page-heading h1{
+    color: rgb(20, 158, 202);
+}
+
 .room-id-input-container label{
     font-weight: 600;
+    color: rgb(246, 247, 249);
 }
 
 .room-id-input-container input{
@@ -22,26 +48,33 @@
     padding: 15px;
     margin-bottom: 1rem;
     font-size: 1rem;
-    border: 2px solid #e8e9ea;
+    /* border: 2px solid #e8e9ea; */
+    border: 2px solid rgb(59, 71, 87);
     border-radius: 5px;
     margin-top: 5px;
+    background-color: rgba(120,131,155,.2);
+    color: rgb(246, 247, 249);
     outline: none;
 }
 
 .room-id-input-container input:hover{
-    border-color: #cbcdcd;
+    /* border-color: #cbcdcd; */
+    border-color: rgb(77, 93, 114);
 }
 
 .room-id-input-container input:focus{
-    border-color: #3993ff;
+    /* border-color: #3993ff; */
+    border-color: #087ea4;
 }
 
 .join-room-btn-container button{
     width: 100%;
     padding: 15px;
-    border: 2px solid #fff;
+    /* border: 2px solid #fff; */
+    border: 2px solid rgb(35, 39, 47);
     border-radius: 5px;
-    background-color: #3993ff;
+    /* background-color: #3993ff; */
+    background-color: rgb(8, 126, 164);
     color: #fff;
     cursor: pointer;
     font-size: 1rem;
@@ -50,16 +83,55 @@
 }
 
 .join-room-btn-container button:hover{
-    background-color: #74b3ff;
+    /* background-color: #74b3ff; */
+    background-color: rgba(8, 126, 164, 0.8);
 }
 
 .join-room-btn-container button:active,
 .join-room-btn-container button:focus{
     outline-width: 3px;
     outline-style: solid;
-    outline-color: #74b3ff6e;
+    /* outline-color: #74b3ff6e; */
+    outline-color: rgb(8, 126, 164);
 }
 
 .join-room-btn-container button:active{
-    background-color: #055bc5;
+    /* background-color: #055bc5; */
+    background-color: rgba(8, 126, 164, 0.8);
+}
+
+/* Light Mode Styles */
+.join-room-page-container{
+    background-color: #fff;
+}
+
+.join-room-page-navbar{
+    background-color: rgb(243, 244, 246);
+}
+
+.join-room-page-navbar h2{
+    color: rgb(35, 39, 47);
+}
+
+.room-id-input-container label{
+    font-weight: 600;
+    color: rgb(35, 39, 47);
+}
+
+.room-id-input-container input{
+    border: 2px solid #e8e9ea;
+    background-color: #fff;
+    color: rgb(35, 39, 47);
+}
+
+.room-id-input-container input:hover{
+    border-color: #cbcdcd;
+}
+
+.room-id-input-container input:focus{
+    border-color: #087ea4;
+}
+
+.join-room-btn-container button{
+    border: 2px solid #fff;
 }

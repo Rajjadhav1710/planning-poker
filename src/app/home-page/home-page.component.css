@@ -1,6 +1,7 @@
 .home-page-container{
     /* border: 2px solid greenyellow; */
     min-height: 100vh;
+    background-color: rgb(35, 39, 47);
 }
 
 .home-page-navbar{
@@ -9,8 +10,8 @@
     align-items: center;
     padding: 30px;
     flex-wrap: wrap;
-    background-color: #fff;
-    /* border: 1px solid black; */
+    /* background-color: #fff; */
+    background-color: rgb(55, 65, 81);
 }
 
 .home-page-navbar-buttons{
@@ -18,19 +19,21 @@
 }
 
 .logo img{
-    width: 12rem;
-    height: 2.5rem;
+    /* width: 12rem; */
+    height: 3rem;
 }
 
 .navbar-new-room-button-container button,
 .navbar-join-room-button-container button{
     padding: 15px;
-    border: 2px solid #fff;
+    /* border: 2px solid #fff; */
+    border: 2px solid rgb(55, 65, 81);
     border-radius: 5px;
     margin-left: 5px;
     margin-right: 5px;
     cursor: pointer;
-    background-color: #3993ff;
+    /* background-color: #3993ff; */
+    background-color: rgb(8, 126, 164);
     color: #fff;
     font-size: 1rem;
     font-weight: 700;
@@ -39,7 +42,8 @@
 
 .navbar-new-room-button-container button:hover,
 .navbar-join-room-button-container button:hover{
-    background-color: #74b3ff;
+    /* background-color: #74b3ff; */
+    background-color: rgba(8, 126, 164, 0.8);
 }
 
 .navbar-new-room-button-container button:active,
@@ -48,10 +52,27 @@
 .navbar-join-room-button-container button:focus{
     outline-width: 3px;
     outline-style: solid;
-    outline-color: #74b3ff6e;
+    /* outline-color: #74b3ff6e; */
+    outline-color: rgb(8, 126, 164);
 }
 
 .navbar-new-room-button-container button:active,
 .navbar-join-room-button-container button:active{
-    background-color: #055bc5;
+    /* background-color: #055bc5; */
+    background-color: rgba(8, 126, 164, 0.8);
+}
+
+/* Light Mode Styles */
+
+.home-page-container{
+    background-color: #fff;
+}
+
+.home-page-navbar{
+    background-color: rgb(243, 244, 246);
+}
+
+.navbar-new-room-button-container button,
+.navbar-join-room-button-container button{
+    border: 2px solid rgb(243, 244, 246);
 }

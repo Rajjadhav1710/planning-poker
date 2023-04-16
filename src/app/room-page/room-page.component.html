@@ -16,7 +16,7 @@
     <nav class="room-page-navbar">
         <div class="room-page-navbar-left-items-container">
             <div class="logo">
-                <img src="https://cdn-icons-png.flaticon.com/512/86/86494.png" alt="logo">
+                <img src="../../assets/logo-icon.svg" alt="logo">
             </div>
             <div class="room-name-container">
                 <h2 class="room-name">{{roomDataService.getCurrentRoom().roomName}}</h2>
@@ -135,7 +135,7 @@
                 <p class="agreement-value">{{roomDataService.getCurrentRoom().agreement}}%</p>
             </div>
         </div>
-        <div class="voting-analytics-row">
+        <div class="voting-analytics-row margin-bottom-zero">
             <div class="voting-analytics-col">
                 <app-card-deck-with-frequency
                     [cardDeck]="roomDataService.getVoteWithFrequency()"
