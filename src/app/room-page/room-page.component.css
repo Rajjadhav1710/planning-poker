@@ -42,10 +42,15 @@
 }
 
 .user-profile-image-container img{
-    width: 2rem;
-    height: 2rem;
+    width: 3rem;
+    height: 3rem;
     /* border: 2px solid black; */
     border-radius: 50%;
+}
+
+.username-container{
+    font-size: 1.2rem;
+    font-weight: 700;
 }
 
 .invite-members-btn-container{
@@ -62,9 +67,30 @@
     font-size: 1rem;
     font-weight: 700;
     letter-spacing: 0.02em;
+    outline: none;
 }
 
 .invite-members-btn-container button:hover{
+    background-color: #ebf4ff;
+}
+
+.leave-room-btn-container{
+    margin-left: 0.5rem;
+}
+
+.leave-room-btn-container button{
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #fff;
+    border-color: #3993ff;
+    color: #3993ff;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.leave-room-btn-container button:hover{
     background-color: #ebf4ff;
 }
 

@@ -21,13 +21,62 @@
     background-color: #fff;
 }
 
+.single-input-modal-img-input-container{
+    display: flex;
+    align-items: center;
+    margin-top: 3rem;
+    
+    /* border: 1px solid black; */
+}
+
+.single-input-modal-img-preview{
+    margin-right: 1rem;
+}
+
+.single-input-modal-img-preview img{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: 3px solid #cbcdcd;
+}
+
+.single-input-modal-img-input input::file-selector-button{
+    padding: 6px;
+    margin: 2px;
+    margin-right: 0.5rem;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #3993ff;
+    color: #fff;
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+}
+
+.single-input-modal-img-input input::file-selector-button:hover{
+    background-color: #74b3ff;
+}
+
+.single-input-modal-img-input input::file-selector-button:active,
+.single-input-modal-img-input input::file-selector-button:focus{
+    outline-width: 3px;
+    outline-style: solid;
+    outline-color: #74b3ff6e;
+}
+
+.single-input-modal-img-input input::file-selector-button:active{
+    background-color: #055bc5;
+}
+
 .single-input-modal-input{
-    margin: 3rem 0;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
 }
 
 .single-input-modal-input input{
     width: 91%;
     padding: 15px;
+    font-size: 1rem;
     border: 2px solid #e8e9ea;
     border-radius: 5px;
     background-color: #fff;
@@ -40,12 +89,6 @@
 
 .single-input-modal-input input:focus{
     border-color: #3993ff;
-}
-
-.single-input-modal-img-preview img{
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
 }
 
 .single-input-modal-submit-btn-container button{

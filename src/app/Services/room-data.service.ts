@@ -158,7 +158,7 @@ export class RoomDataService {
 
     console.log(voteWithFrequencyArray);
 
-    return ""+(100 - this.getCV(voteWithFrequencyArray));
+    return (100 - this.getCV(voteWithFrequencyArray)).toFixed(2);
     // return "50%";
   }
 

@@ -20,7 +20,7 @@ export class SingleInputModalComponent {
     profileImageUrl: string
   }>();// created custom event
 
-  userImageSrc: string = "https://cdn-icons-png.flaticon.com/512/456/456212.png";
+  userImageSrc: string = "../../assets/default-user.png";
   userImage: any;
 
   private fileService: FileService;

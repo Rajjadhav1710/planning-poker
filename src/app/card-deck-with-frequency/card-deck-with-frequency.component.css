@@ -1,0 +1,25 @@
+.card-deck-with-frequency{
+    display: flex;
+    justify-content: center;
+}
+
+.card-with-frequency{
+    margin: 1rem 0.5rem;
+}
+
+.card-with-frequency button{
+    width: 4rem;
+    height: 6rem;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #fff;
+    border: 2px solid #1a2935;
+    color: #1a2935;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.card-with-frequency p{
+    color: #1a2935;
+    margin-top: 5px;
+}

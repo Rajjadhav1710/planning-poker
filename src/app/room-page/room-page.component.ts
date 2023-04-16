@@ -48,7 +48,7 @@ export class RoomPageComponent implements OnInit {
       votingStatus: false,
       vote: "",
       isAdmin: this.roomDataService.getIsCurrentUserAdmin(),
-      profileImageUrl: userInfo.profileImageUrl === "" ? "https://cdn-icons-png.flaticon.com/512/456/456212.png" : userInfo.profileImageUrl
+      profileImageUrl: userInfo.profileImageUrl === "" ? "../../assets/default-user.png" : userInfo.profileImageUrl
     }
 
     this.socketIoService.joinRoom(this.getRoomId(), newUser, ()=>{});

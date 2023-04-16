@@ -1,0 +1,72 @@
+.room-not-found-page-container{
+    min-height: 100vh;
+}
+
+.room-not-found-page-navbar{
+    padding: 30px;
+}
+
+.room-not-found-page-navbar img{
+    width: 12rem;
+    height: 2.5rem;
+}
+
+.room-not-found-page-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.room-not-found-page-info-container,.room-not-found-page-image-container{
+    text-align: center;
+    flex: 1;
+}
+
+.room-not-found-page-info-heading{
+    font-size: 1.5rem;
+}
+
+.room-not-found-page-info-body{
+    margin-top: 0.5rem;
+}
+
+.room-not-found-page-info-body p{
+    font-size: 1.3rem;
+}
+
+.back-to-home-page-btn-container{
+    margin-top: 3rem;
+}
+
+.back-to-home-page-btn-container button{
+    width: 60%;
+    padding: 15px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #3993ff;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.back-to-home-page-btn-container button:hover{
+    background-color: #74b3ff;
+}
+
+.back-to-home-page-btn-container button:active,
+.back-to-home-page-btn-container button:focus{
+    outline-width: 3px;
+    outline-style: solid;
+    outline-color: #74b3ff6e;
+}
+
+.back-to-home-page-btn-container button:active{
+    background-color: #055bc5;
+}
+
+.room-not-found-page-image img{
+    width: 40rem;
+}

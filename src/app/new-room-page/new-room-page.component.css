@@ -50,6 +50,7 @@
     border: 2px solid #e8e9ea;
     border-radius: 5px;
     outline: none;
+    font-size: 1rem;
 }
 
 .new-room-voting-system-input-container select{
@@ -60,6 +61,7 @@
     border-radius: 5px;
     cursor: pointer;
     outline: none;
+    font-size: 1rem;
 }
 
 .new-room-name-input-container input:hover,

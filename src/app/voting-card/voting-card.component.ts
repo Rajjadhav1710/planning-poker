@@ -10,5 +10,6 @@ export class VotingCardComponent {
   @Input() votingStatus?: boolean = false;
   @Input() vote?: string = "";
   @Input() allCardsRevealed: boolean = false;
+  @Input() userProfileImageURL?: string = "../app/assets/default-user.png";
   //TODO: Remove '?'
 }
