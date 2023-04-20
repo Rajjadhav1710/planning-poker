@@ -4,7 +4,8 @@
         class="voting-status"
         [ngClass]="{
             'voting-status-true':votingStatus === true,
-            'voting-status-false':votingStatus === false
+            'voting-status-false':votingStatus === false,
+            'light-theme': themeService.getCurrentTheme() === 'light'
         }"
     >
         <!-- <p>{{votingStatus}}</p> -->
@@ -12,6 +13,9 @@
     <div
         *ngIf="allCardsRevealed"
         class="vote-container"
+        [ngClass]="{
+            'light-theme': themeService.getCurrentTheme() === 'light'
+        }"
     >
         <p>{{vote}}</p>
     </div>
@@ -20,7 +24,9 @@
             <img [src]="userProfileImageURL" alt="user profile image">
         </div>
         <div class="username-container">
-            <p class="username">{{userName}}</p>
+            <p class="username" [ngClass]="{
+                'light-theme': themeService.getCurrentTheme() === 'light'
+            }">{{userName}}</p>
         </div>
     </div>
 </div>

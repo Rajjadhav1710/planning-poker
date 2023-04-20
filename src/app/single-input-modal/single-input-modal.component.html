@@ -1,5 +1,7 @@
 <div class="single-input-modal-container">
-    <div class="single-input-modal">
+    <div class="single-input-modal" [ngClass]="{
+        'light-theme': themeService.getCurrentTheme() === 'light'
+    }">
         <!-- <div class="single-input-modal-close-btn">
             <button>X</button>
         </div> -->
@@ -11,14 +13,20 @@
                 <img [src]="userImageSrc" alt="user image">
             </div>
             <div class="single-input-modal-img-input">
-                <input type="file" accept="image/*" (change)="handlUserImage($event)">
+                <input type="file" accept="image/*" (change)="handlUserImage($event)" [ngClass]="{
+                    'light-theme': themeService.getCurrentTheme() === 'light'
+                }">
             </div>
         </div>
         <div class="single-input-modal-input">
-            <input [(ngModel)]="modalData" type="text" [placeholder]="placeholder">
+            <input [(ngModel)]="modalData" type="text" [placeholder]="placeholder" [ngClass]="{
+                'light-theme': themeService.getCurrentTheme() === 'light'
+            }">
         </div>
         <div class="single-input-modal-submit-btn-container">
-            <button (click)="handleContinue()">Continue</button>
+            <button (click)="handleContinue()" [ngClass]="{
+                'light-theme': themeService.getCurrentTheme() === 'light'
+            }">Continue</button>
         </div>
     </div>
 </div>

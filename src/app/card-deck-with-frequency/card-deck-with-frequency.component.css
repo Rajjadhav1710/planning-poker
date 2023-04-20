@@ -26,10 +26,10 @@
 
 /* Light Mode Styles */
 
-.card-with-frequency button{
+.card-with-frequency button.light-theme{
     border: 2px solid #fff;
 }
 
-.card-with-frequency p{
+.card-with-frequency p.light-theme{
     color: #1a2935;
 }

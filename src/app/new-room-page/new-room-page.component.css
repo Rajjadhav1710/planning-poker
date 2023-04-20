@@ -136,46 +136,46 @@
 
 /* Light Mode Styles */
 
-.new-room-page-container{
+.new-room-page-container.light-theme{
     background-color: #fff;
 }
 
-.new-room-page-navbar{
+.new-room-page-navbar.light-theme{
     background-color: rgb(243, 244, 246);
 }
 
-.new-room-page-navbar h2{
+.new-room-page-navbar h2.light-theme{
     color: rgb(35, 39, 47);
 }
 
-.new-room-name-input-container label,
-.new-room-voting-system-input-container label{
+.new-room-name-input-container label.light-theme,
+.new-room-voting-system-input-container label.light-theme{
     color: rgb(35, 39, 47);
 }
 
-.new-room-name-input-container input{
+.new-room-name-input-container input.light-theme{
     border: 2px solid #e8e9ea;
     background-color: #fff;
     color: rgb(35, 39, 47);
 }
 
-.new-room-voting-system-input-container select{
+.new-room-voting-system-input-container select.light-theme{
     border: 2px solid #e8e9ea;
     background-color: #fff;
     color: rgb(35, 39, 47);
 }
 
-.new-room-name-input-container input:hover,
-.new-room-voting-system-input-container select:hover{
+.new-room-name-input-container input:hover.light-theme,
+.new-room-voting-system-input-container select:hover.light-theme{
     border-color: #cbcdcd;
 }
 
-.new-room-name-input-container input:focus,
-.new-room-voting-system-input-container select:focus{
+.new-room-name-input-container input:focus.light-theme,
+.new-room-voting-system-input-container select:focus.light-theme{
     border-color: #087ea4;
 }
 
 
-.create-room-btn-container button{
+.create-room-btn-container button.light-theme{
     border: 2px solid #fff;
 }

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ThemeService } from '../Services/theme.service';
 
 @Component({
   selector: 'app-voting-card',
@@ -12,4 +13,10 @@ export class VotingCardComponent {
   @Input() allCardsRevealed: boolean = false;
   @Input() userProfileImageURL?: string = "../app/assets/default-user.png";
   //TODO: Remove '?'
+
+  public themeService: ThemeService;
+
+  constructor(themeService: ThemeService){
+    this.themeService = themeService;
+  }
 }

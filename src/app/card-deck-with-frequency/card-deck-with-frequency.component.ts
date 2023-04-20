@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ThemeService } from '../Services/theme.service';
 
 @Component({
   selector: 'app-card-deck-with-frequency',
@@ -10,4 +11,10 @@ export class CardDeckWithFrequencyComponent {
     vote: string;
     frequency: number;
   }[] = []; // cardDeckWithFrequency
+
+  public themeService: ThemeService;
+
+  constructor(themeService: ThemeService){
+    this.themeService = themeService;
+  }
 }

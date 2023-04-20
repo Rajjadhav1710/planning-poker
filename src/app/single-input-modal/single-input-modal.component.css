@@ -142,28 +142,28 @@
 }
 
 /* Light Mode Styles */
-.single-input-modal{
+.single-input-modal.light-theme{
     background-color: #fff;
 }
 
-.single-input-modal-img-input input::file-selector-button{
+.single-input-modal-img-input input::file-selector-button.light-theme{
     border: 2px solid #fff;
 }
 
-.single-input-modal-input input{
+.single-input-modal-input input.light-theme{
     border: 2px solid #e8e9ea;
     background-color: #fff;
     color: rgb(35, 39, 47);
 }
 
-.single-input-modal-input input:hover{
+.single-input-modal-input input:hover.light-theme{
     border-color: #cbcdcd;
 }
 
-.single-input-modal-input input:focus{
+.single-input-modal-input input:focus.light-theme{
     border-color: #087ea4;
 }
 
-.single-input-modal-submit-btn-container button{
+.single-input-modal-submit-btn-container button.light-theme{
     border: 2px solid #fff;
 }

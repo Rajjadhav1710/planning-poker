@@ -1,7 +1,14 @@
-<div class="new-room-page-container">
-    <div class="new-room-page-navbar">
+<div class="new-room-page-container" [ngClass]="{
+    'light-theme': themeService.getCurrentTheme() === 'light'
+}">
+    <div class="new-room-page-navbar" [ngClass]="{
+        'light-theme': themeService.getCurrentTheme() === 'light'
+    }">
         <img src="../../assets/logo-icon.svg" alt="logo">
-        <h2>Create room</h2>
+        <h2 [ngClass]="{
+            'light-theme': themeService.getCurrentTheme() === 'light'
+        }">Create room</h2>
+        <input type="checkbox" (click)="toggleCurrentTheme()">
     </div>
     <div class="new-room-page-body">
         <div class="new-room-page-heading">
@@ -9,14 +16,22 @@
         </div>
         <div class="new-room-inputs-container">
             <div class="new-room-name-input-container">
-                <label for="room_name">Room Name </label>
+                <label for="room_name" [ngClass]="{
+                    'light-theme': themeService.getCurrentTheme() === 'light'
+                }">Room Name </label>
 
-                <input [(ngModel)]="roomName" type="text" placeholder="Room's Name" id="room_name" autocomplete="off">
+                <input [(ngModel)]="roomName" type="text" placeholder="Room's Name" id="room_name" autocomplete="off" [ngClass]="{
+                    'light-theme': themeService.getCurrentTheme() === 'light'
+                }">
             </div>
             <div class="new-room-voting-system-input-container">
-                <label for="voting_system_select">Voting System </label>
+                <label for="voting_system_select" [ngClass]="{
+                    'light-theme': themeService.getCurrentTheme() === 'light'
+                }">Voting System </label>
     
-                <select [(ngModel)]="votingSystem" name="" id="voting_system_select">
+                <select [(ngModel)]="votingSystem" name="" id="voting_system_select" [ngClass]="{
+                    'light-theme': themeService.getCurrentTheme() === 'light'
+                }">
                     <option value="fibonacci">Fibonacci ( 0, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ? )</option>
                     <option value="modified fibonacci">Modified fibonacci ( 0, ½, 1, 2, 3, 5, 8, 13, 20, 40, 100, ?)</option>
                     <option value="powers of 2">Powers of 2 ( 0, 1, 2, 4, 8, 16, 32, 64, ?)</option>
@@ -26,7 +41,9 @@
             </div>
         </div>
         <div class="create-room-btn-container">
-            <button (click)="createRoom()" class="create-room-btn">Create Room</button>
+            <button (click)="createRoom()" class="create-room-btn" [ngClass]="{
+                'light-theme': themeService.getCurrentTheme() === 'light'
+            }">Create Room</button>
         </div>
     </div>
 </div>

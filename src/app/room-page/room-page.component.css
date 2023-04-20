@@ -240,26 +240,26 @@
 }
 
 /* Light Mode Styles */
-.room-page-container{
+.room-page-container.light-theme{
     background-color: #fff;
 }
 
-.room-page-navbar{
+.room-page-navbar.light-theme{
     background-color: rgb(243, 244, 246);
 }
 
-.room-name-container h2{
+.room-name-container h2.light-theme{
     color: rgb(35, 39, 47);
 }
 
-.username-container p{
+.username-container p.light-theme{
     color: rgb(35, 39, 47);
 }
 
-.room-voting-status{
+.room-voting-status.light-theme{
     color: rgb(35, 39, 47);
 }
 
-.average-value,.agreement-value{
+.average-value.light-theme,.agreement-value.light-theme{
     color: rgb(35, 39, 47);
 }

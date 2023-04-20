@@ -1,15 +1,33 @@
-<div class="home-page-container">
-    <nav class="home-page-navbar">
+<div class="home-page-container" [ngClass]="{
+    'light-theme': themeService.getCurrentTheme() === 'light'
+}">
+    <nav class="home-page-navbar" [ngClass]="{
+        'light-theme': themeService.getCurrentTheme() === 'light'
+    }">
         <div class="logo">
             <img src="../../assets/full-logo-light-mode.svg" alt="logo">
         </div>
         <div class="home-page-navbar-buttons">
             <div class="navbar-new-room-button-container">
-                <button (click)="navigateToNewRoomPage()">New Room</button>
+                <button (click)="navigateToNewRoomPage()" [ngClass]="{
+                    'light-theme': themeService.getCurrentTheme() === 'light'
+                }">New Room</button>
             </div>
             <div class="navbar-join-room-button-container">
-                <button (click)="navigateToJoinRoomPage()">Join Room</button>
+                <button (click)="navigateToJoinRoomPage()" [ngClass]="{
+                    'light-theme': themeService.getCurrentTheme() === 'light'
+                }">Join Room</button>
             </div>
+            <input type="checkbox" (click)="toggleCurrentTheme()">
         </div>
     </nav>
+    <div class="test" style="display: flex; align-items: center;justify-content:space-between;text-align: center;color: #fff;margin-top: 6rem;">
+        <div style="margin-left: 11rem;">
+            <h1>Planning Poker Online,</h1>
+            <h1> For Agile Development Teams</h1>
+        </div>
+        <div style="margin-right: 5rem;">
+            <img src="../../assets/test.png" alt="" style="width: 50rem;">
+        </div>
+    </div>
 </div>

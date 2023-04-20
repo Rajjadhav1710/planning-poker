@@ -1,6 +1,11 @@
-<div class="room-not-found-page-container">
-    <div class="room-not-found-page-navbar">
+<div class="room-not-found-page-container" [ngClass]="{
+    'light-theme': themeService.getCurrentTheme() === 'light'
+}">
+    <div class="room-not-found-page-navbar" [ngClass]="{
+        'light-theme': themeService.getCurrentTheme() === 'light'
+    }">
         <img src="../../assets/full-logo-light-mode.svg" alt="logo">
+        <input type="checkbox" (click)="toggleCurrentTheme()">
     </div>
     <div class="room-not-found-page-body">
         <div class="room-not-found-page-info-container">
@@ -8,10 +13,14 @@
                 <h1>Room Not Found</h1>
             </div>
             <div class="room-not-found-page-info-body">
-                <p>Sorry, we can’t find what you are looking for.</p>
+                <p [ngClass]="{
+                    'light-theme': themeService.getCurrentTheme() === 'light'
+                }">Sorry, we can’t find what you are looking for.</p>
             </div>
             <div class="back-to-home-page-btn-container">
-                <button (click)="navigateToHomePage()">Go Back</button>
+                <button (click)="navigateToHomePage()" [ngClass]="{
+                    'light-theme': themeService.getCurrentTheme() === 'light'
+                }">Go Back</button>
             </div>
         </div>
         <div class="room-not-found-page-image-container">

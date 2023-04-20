@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { SocketIoService } from '../Services/socket-io.service';
+import { ThemeService } from '../Services/theme.service';
 
 @Component({
   selector: 'app-new-room-page',
@@ -13,10 +14,12 @@ export class NewRoomPageComponent {
 
   private socketIoService: SocketIoService;
   private router: Router;
+  public themeService: ThemeService;
 
-  constructor(socketIoService: SocketIoService, router: Router) {
+  constructor(socketIoService: SocketIoService, router: Router, themeService: ThemeService) {
     this.socketIoService = socketIoService;
     this.router = router;
+    this.themeService = themeService;
   }
 
   createRoom(): void{
@@ -51,5 +54,9 @@ export class NewRoomPageComponent {
           }
       }
       return roomId;
+  }
+
+  toggleCurrentTheme(){
+    this.themeService.toggleCurrentTheme();
   }
 }

@@ -1,7 +1,14 @@
-<div class="join-room-page-container">
-    <div class="join-room-page-navbar">
+<div class="join-room-page-container" [ngClass]="{
+    'light-theme': themeService.getCurrentTheme() === 'light'
+}">
+    <div class="join-room-page-navbar" [ngClass]="{
+        'light-theme': themeService.getCurrentTheme() === 'light'
+    }">
         <img src="../../assets/logo-icon.svg" alt="logo">
-        <h2>Join Room</h2>
+        <h2 [ngClass]="{
+            'light-theme': themeService.getCurrentTheme() === 'light'
+        }">Join Room</h2>
+        <input type="checkbox" (click)="toggleCurrentTheme()">
     </div>
     <div class="join-room-page-content">
         <div class="join-room-page-heading">
@@ -9,12 +16,18 @@
         </div>
         <div class="join-room-inputs-container">
             <div class="room-id-input-container">
-                <label for="room_id">Room Id</label>
-                <input [(ngModel)]="roomId" type="text" id="room_id" placeholder="Room Id">
+                <label for="room_id" [ngClass]="{
+                    'light-theme': themeService.getCurrentTheme() === 'light'
+                }">Room Id</label>
+                <input [(ngModel)]="roomId" type="text" id="room_id" placeholder="Room Id" [ngClass]="{
+                    'light-theme': themeService.getCurrentTheme() === 'light'
+                }">
             </div>       
         </div>
         <div class="join-room-btn-container">
-            <button (click)="joinRoom()" class="join-room-btn">Join</button>
+            <button (click)="joinRoom()" class="join-room-btn" [ngClass]="{
+                'light-theme': themeService.getCurrentTheme() === 'light'
+            }">Join</button>
         </div>    
     </div>
 </div>

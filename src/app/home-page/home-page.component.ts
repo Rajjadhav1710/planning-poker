@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ThemeService } from '../Services/theme.service';
 
 @Component({
   selector: 'app-home-page',
@@ -8,9 +9,11 @@ import { Router } from '@angular/router';
 })
 export class HomePageComponent {
   private router: Router;
+  public themeService: ThemeService;
 
-  constructor(router: Router){
+  constructor(router: Router, themeService: ThemeService){
     this.router = router;
+    this.themeService = themeService;
   }
 
   navigateToNewRoomPage(): void {
@@ -21,5 +24,9 @@ export class HomePageComponent {
   navigateToJoinRoomPage(): void {
     // this.router.navigate(['join-room']);
     this.router.navigateByUrl('join-room');
+  }
+
+  toggleCurrentTheme(){
+    this.themeService.toggleCurrentTheme();
   }
 }

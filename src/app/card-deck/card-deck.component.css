@@ -48,11 +48,11 @@
 
 /* Light Mode Styles */
 
-.card button{
+.card button.light-theme{
     background-color: rgb(230, 247, 255);
     color: rgb(8, 126, 164);
 }
 
-.card button:hover{
+.card button:hover.light-theme{
     /* background-color: rgb(246, 247, 249) */
 }

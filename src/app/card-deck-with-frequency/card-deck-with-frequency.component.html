@@ -1,8 +1,12 @@
 <div class="card-deck-with-frequency-container">
     <div class="card-deck-with-frequency">
         <div *ngFor="let card of cardDeck" class="card-with-frequency">
-            <button>{{card.vote}}</button>
-            <p>{{card.frequency}} Vote</p>
+            <button [ngClass]="{
+                'light-theme': themeService.getCurrentTheme() === 'light'
+            }">{{card.vote}}</button>
+            <p [ngClass]="{
+                'light-theme': themeService.getCurrentTheme() === 'light'
+            }">{{card.frequency}} Vote</p>
         </div>
     </div>
 </div>

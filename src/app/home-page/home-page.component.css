@@ -64,15 +64,15 @@
 
 /* Light Mode Styles */
 
-.home-page-container{
+.home-page-container.light-theme{
     background-color: #fff;
 }
 
-.home-page-navbar{
+.home-page-navbar.light-theme{
     background-color: rgb(243, 244, 246);
 }
 
-.navbar-new-room-button-container button,
-.navbar-join-room-button-container button{
+.navbar-new-room-button-container button.light-theme,
+.navbar-join-room-button-container button.light-theme{
     border: 2px solid rgb(243, 244, 246);
 }

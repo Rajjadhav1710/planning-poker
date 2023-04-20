@@ -101,37 +101,37 @@
 }
 
 /* Light Mode Styles */
-.join-room-page-container{
+.join-room-page-container.light-theme{
     background-color: #fff;
 }
 
-.join-room-page-navbar{
+.join-room-page-navbar.light-theme{
     background-color: rgb(243, 244, 246);
 }
 
-.join-room-page-navbar h2{
+.join-room-page-navbar h2.light-theme{
     color: rgb(35, 39, 47);
 }
 
-.room-id-input-container label{
+.room-id-input-container label.light-theme{
     font-weight: 600;
     color: rgb(35, 39, 47);
 }
 
-.room-id-input-container input{
+.room-id-input-container input.light-theme{
     border: 2px solid #e8e9ea;
     background-color: #fff;
     color: rgb(35, 39, 47);
 }
 
-.room-id-input-container input:hover{
+.room-id-input-container input:hover.light-theme{
     border-color: #cbcdcd;
 }
 
-.room-id-input-container input:focus{
+.room-id-input-container input:focus.light-theme{
     border-color: #087ea4;
 }
 
-.join-room-btn-container button{
+.join-room-btn-container button.light-theme{
     border: 2px solid #fff;
 }

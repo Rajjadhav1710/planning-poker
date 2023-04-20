@@ -65,11 +65,11 @@
 }
 
 /* Light Mode Styles */
-.vote-container{
+.vote-container.light-theme{
     background-color: rgb(230, 247, 255);
 }
 
-.voting-status.voting-status-true{
+.voting-status.voting-status-true.light-theme{
     /* background-color: #3993ff;
     background: linear-gradient(45deg,#3993ff 12%,transparent 0,transparent 88%,#3993ff 0),linear-gradient(135deg,transparent 37%,#1a7bf2 0,#1a7bf2 63%,transparent 0),linear-gradient(45deg,transparent 37%,#3993ff 0,#3993ff 63%,transparent 0),#74b3ff;
     background-size: 17px 17px; */
@@ -80,10 +80,10 @@
     opacity: 1
 }
 
-.voting-status.voting-status-false{
+.voting-status.voting-status-false.light-theme{
     background-color: #e8e9ea;
 }
 
-.username-container p{
+.username-container p.light-theme{
     color: rgb(35, 39, 47);
 }

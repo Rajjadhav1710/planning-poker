@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { EmailService } from '../Services/email.service';
+import { ThemeService } from '../Services/theme.service';
 
 @Component({
   selector: 'app-invite-players-modal',
@@ -15,8 +16,11 @@ export class InvitePlayersModalComponent {
 
   private emailService: EmailService;
 
-  constructor(emailService: EmailService){
+  public themeService: ThemeService;
+
+  constructor(emailService: EmailService,themeService: ThemeService){
     this.emailService = emailService;
+    this.themeService = themeService;
   }
 
   copyContentToClipboard(htmlElement: any): void {

@@ -81,18 +81,18 @@
 }
 
 /* Light Mode Styles */
-.room-not-found-page-container{
+.room-not-found-page-container.light-theme{
     background-color: #fff;
 }
 
-.room-not-found-page-navbar{
+.room-not-found-page-navbar.light-theme{
     background-color: rgb(243, 244, 246);
 }
 
-.room-not-found-page-info-body p{
+.room-not-found-page-info-body p.light-theme{
     color: rgb(35, 39, 47);
 }
 
-.back-to-home-page-btn-container button{
+.back-to-home-page-btn-container button.light-theme{
     border: 2px solid #fff;
 }

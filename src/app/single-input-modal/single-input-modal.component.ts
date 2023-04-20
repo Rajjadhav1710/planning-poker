@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FileService } from '../Services/file.service';
+import { ThemeService } from '../Services/theme.service';
 
 @Component({
   selector: 'app-single-input-modal',
@@ -24,9 +25,11 @@ export class SingleInputModalComponent {
   userImage: any;
 
   private fileService: FileService;
+  public themeService: ThemeService;
 
-  constructor(fileService: FileService){
+  constructor(fileService: FileService, themeService: ThemeService){
     this.fileService = fileService;
+    this.themeService = themeService;
   }
 
   handleContinue(): void {

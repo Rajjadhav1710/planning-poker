@@ -6,7 +6,10 @@
         <div *ngFor="let card of cardDeck" class="card">
             <button 
                 (click)="handleCardClick(card)"
-                [ngClass]="{'selected-card': card === selectedCard}"
+                [ngClass]="{
+                    'selected-card': card === selectedCard,
+                    'light-theme': themeService.getCurrentTheme() === 'light'
+                }"
             >{{card}}</button>
         </div>
     </div>

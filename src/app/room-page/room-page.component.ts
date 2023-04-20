@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../Models/user.model';
 import { RoomDataService } from '../Services/room-data.service';
 import { SocketIoService } from '../Services/socket-io.service';
+import { ThemeService } from '../Services/theme.service';
 
 @Component({
   selector: 'app-room-page',
@@ -14,14 +15,16 @@ export class RoomPageComponent implements OnInit {
   public roomDataService: RoomDataService;
   private router: Router;
   private activatedRoute: ActivatedRoute;
+  public themeService: ThemeService;
 
   public isInvitePlayersModalOpen: boolean = false;
 
-  constructor(socketIoService: SocketIoService, roomDataService: RoomDataService, router: Router, activatedRoute: ActivatedRoute) {
+  constructor(socketIoService: SocketIoService, roomDataService: RoomDataService, router: Router, activatedRoute: ActivatedRoute, themeService: ThemeService) {
     this.socketIoService = socketIoService;
     this.roomDataService = roomDataService;
     this.router = router;
     this.activatedRoute = activatedRoute;
+    this.themeService = themeService;
     
     // is current user admin
     // console.log(this.router.getCurrentNavigation()?.extras?.state);
@@ -98,6 +101,10 @@ export class RoomPageComponent implements OnInit {
       .then(() => {
         window.location.reload();
       });
+  }
+
+  toggleCurrentTheme(){
+    this.themeService.toggleCurrentTheme();
   }
 
   ngOnInit(): void {

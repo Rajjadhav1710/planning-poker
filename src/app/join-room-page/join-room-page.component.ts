@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ThemeService } from '../Services/theme.service';
 
 @Component({
   selector: 'app-join-room-page',
@@ -10,9 +11,11 @@ export class JoinRoomPageComponent {
   roomId: string = "";
   
   private router: Router;
+  public themeService: ThemeService;
 
-  constructor(router: Router) {
+  constructor(router: Router, themeService: ThemeService) {
     this.router = router;
+    this.themeService = themeService;
   }
 
   joinRoom(): void {
@@ -25,5 +28,9 @@ export class JoinRoomPageComponent {
         }
       });
     }
+  }
+
+  toggleCurrentTheme(){
+    this.themeService.toggleCurrentTheme();
   }
 }

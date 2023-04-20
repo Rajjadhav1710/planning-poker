@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ThemeService } from '../Services/theme.service';
 
 @Component({
   selector: 'app-card-deck',
@@ -12,6 +13,12 @@ export class CardDeckComponent {
   userVoteEvent: EventEmitter<string> = new EventEmitter<string>();// created custom event
 
   selectedCard: string = "";
+
+  public themeService: ThemeService;
+
+  constructor(themeService: ThemeService) {
+    this.themeService = themeService;
+  }
 
   handleCardClick(vote: string): void {
     this.userVoteEvent.emit(vote);

@@ -1,10 +1,16 @@
 <div class="invite-players-modal-container">
-    <div class="invite-players-modal">
+    <div class="invite-players-modal" [ngClass]="{
+        'light-theme': themeService.getCurrentTheme() === 'light'
+    }">
         <div class="invite-players-modal-close-btn-container">
-            <button (click)="closeInvitePlayersModal()">X</button>
+            <button (click)="closeInvitePlayersModal()" [ngClass]="{
+                'light-theme': themeService.getCurrentTheme() === 'light'
+            }">X</button>
         </div>
         <div class="invite-players-modal-heading">
-            <h1>Invite players</h1>
+            <h1 [ngClass]="{
+                'light-theme': themeService.getCurrentTheme() === 'light'
+            }">Invite players</h1>
         </div>
         <div class="invite-players-modal-content">
             <div class="invite-players-with-link-container">
@@ -19,10 +25,15 @@
                                 [value]="inviteLink" 
                                 #invitePlayersLink 
                                 readonly
+                                [ngClass]="{
+                                    'light-theme': themeService.getCurrentTheme() === 'light'
+                                }"
                             >
                         </div>
                         <div class="copy-invite-players-link">
-                            <button (click)="copyContentToClipboard(invitePlayersLink)">copy</button>
+                            <button (click)="copyContentToClipboard(invitePlayersLink)" [ngClass]="{
+                                'light-theme': themeService.getCurrentTheme() === 'light'
+                            }">copy</button>
                         </div>
                     </div>
                 </div>
@@ -30,7 +41,9 @@
             <div class="invite-players-with-code-container">
                 <div class="invite-players-with-code-content">
                     <div class="invite-players-with-code-heading">
-                        <h3>Or Join Through Code</h3>
+                        <h3 [ngClass]="{
+                            'light-theme': themeService.getCurrentTheme() === 'light'
+                        }">Or Join Through Code</h3>
                     </div>
                     <div class="invite-players-with-code-body">
                         <div class="invite-players-code">
@@ -39,10 +52,15 @@
                                 [value]="inviteCode" 
                                 #invitePlayersCode
                                 readonly
+                                [ngClass]="{
+                                    'light-theme': themeService.getCurrentTheme() === 'light'
+                                }"
                             >
                         </div>
                         <div class="copy-invite-players-code">
-                            <button (click)="copyContentToClipboard(invitePlayersCode)">copy</button>
+                            <button (click)="copyContentToClipboard(invitePlayersCode)" [ngClass]="{
+                                'light-theme': themeService.getCurrentTheme() === 'light'
+                            }">copy</button>
                         </div>
                     </div>
                 </div>
@@ -50,13 +68,17 @@
             <div class="invite-players-with-email-container">
                 <div class="invite-players-with-email-content">
                     <div class="invite-players-with-email-heading">
-                        <h3>Send through E-mail</h3>
+                        <h3 [ngClass]="{
+                            'light-theme': themeService.getCurrentTheme() === 'light'
+                        }">Send through E-mail</h3>
                     </div>
                     <div class="invite-players-with-email-form">
                         <form (ngSubmit)="sendMail(emailForm)" #emailForm="ngForm">
                             <div class="sender-email-info-container">
                                 <div class="sender-email-label-container">
-                                    <label for="senderEmail">Your email</label>
+                                    <label for="senderEmail" [ngClass]="{
+                                        'light-theme': themeService.getCurrentTheme() === 'light'
+                                    }">Your email</label>
                                 </div>
                                 <div class="sender-email">
                                     <input 
@@ -66,12 +88,17 @@
                                         ngModel
                                         required
                                         email
+                                        [ngClass]="{
+                                            'light-theme': themeService.getCurrentTheme() === 'light'
+                                        }"
                                     >
                                 </div>
                             </div>
                             <div class="receiver-email-info-container">
                                 <div class="receiver-email-label-container">
-                                    <label for="receiverEmail">Receiver's email</label>
+                                    <label for="receiverEmail" [ngClass]="{
+                                        'light-theme': themeService.getCurrentTheme() === 'light'
+                                    }">Receiver's email</label>
                                 </div>
                                 <div class="receiver-email">
                                     <input 
@@ -81,6 +108,9 @@
                                         ngModel
                                         required
                                         email
+                                        [ngClass]="{
+                                            'light-theme': themeService.getCurrentTheme() === 'light'
+                                        }"
                                     >
                                 </div>
                             </div>
@@ -89,6 +119,9 @@
                                     type="submit" 
                                     value="Send" 
                                     [disabled]="!emailForm.valid"
+                                    [ngClass]="{
+                                        'light-theme': themeService.getCurrentTheme() === 'light'
+                                    }"
                                 >
                             </div>
                         </form>

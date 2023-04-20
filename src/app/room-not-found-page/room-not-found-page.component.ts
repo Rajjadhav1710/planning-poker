@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ThemeService } from '../Services/theme.service';
 
 @Component({
   selector: 'app-room-not-found-page',
@@ -8,12 +9,18 @@ import { Router } from '@angular/router';
 })
 export class RoomNotFoundPageComponent {
   private router: Router;
+  public themeService: ThemeService;
 
-  constructor(router: Router){
-    this.router = router;              
+  constructor(router: Router, themeService: ThemeService){
+    this.router = router;     
+    this.themeService = themeService;         
   }
 
   navigateToHomePage(): void {
     this.router.navigateByUrl('home');
+  }
+
+  toggleCurrentTheme(){
+    this.themeService.toggleCurrentTheme();
   }
 }

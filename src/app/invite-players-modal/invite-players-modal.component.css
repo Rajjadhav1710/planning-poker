@@ -180,45 +180,45 @@
 
 /* Light Mode Styles */
 
-.invite-players-modal{
+.invite-players-modal.light-theme{
     background-color: #fff;
 }
 
-.invite-players-modal-close-btn-container button{
+.invite-players-modal-close-btn-container button.light-theme{
     border: 2px solid #fff;
 }
 
-.invite-players-with-link-heading h3,.invite-players-with-code-heading h3,.invite-players-with-email-heading h3,.sender-email-label-container label,.receiver-email-label-container label{
+.invite-players-with-link-heading h3.light-theme,.invite-players-with-code-heading h3.light-theme,.invite-players-with-email-heading h3.light-theme,.sender-email-label-container label.light-theme,.receiver-email-label-container label.light-theme{
     color: rgb(35, 39, 47);
 }
 
-.invite-players-link input,
-.invite-players-code input,
-.sender-email input,
-.receiver-email input
+.invite-players-link input.light-theme,
+.invite-players-code input.light-theme,
+.sender-email input.light-theme,
+.receiver-email input.light-theme
 {
     border: 2px solid #e8e9ea;
     background-color: #fff;
     color: rgb(35, 39, 47);
 }
 
-.invite-players-link input:hover,
-.invite-players-code input:hover,
-.sender-email input:hover,
-.receiver-email input:hover{
+.invite-players-link input:hover.light-theme,
+.invite-players-code input:hover.light-theme,
+.sender-email input:hover.light-theme,
+.receiver-email input:hover.light-theme{
     border-color: #cbcdcd;
 }
 
-.invite-players-link input:focus,
-.invite-players-code input:focus,
-.sender-email input:focus,
-.receiver-email input:focus{
+.invite-players-link input:focus.light-theme,
+.invite-players-code input:focus.light-theme,
+.sender-email input:focus.light-theme,
+.receiver-email input:focus.light-theme{
     border-color: #087ea4;
 }
 
-.copy-invite-players-link button,
-.copy-invite-players-code button,
-.send-email-btn-container input
+.copy-invite-players-link button.light-theme,
+.copy-invite-players-code button.light-theme,
+.send-email-btn-container input.light-theme
 {
     border: 2px solid #fff;
 }
