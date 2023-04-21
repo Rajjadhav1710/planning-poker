@@ -14,6 +14,8 @@ export class InvitePlayersModalComponent {
   @Output()
   closeInvitePlayersModalEvent: EventEmitter<any> = new EventEmitter<any>();// created custom event
 
+  sendEmailBtnText: string = "Send";
+
   private emailService: EmailService;
 
   public themeService: ThemeService;
@@ -37,11 +39,15 @@ export class InvitePlayersModalComponent {
 
   sendMail(emailForm: any){
     console.log(emailForm);
+
+    this.sendEmailBtnText = "Sent";
+
     let mailInfo = {
       roomPageLink: this.inviteLink,
       emailTo: emailForm.value.receiverEmail,
       emailFrom: emailForm.value.senderEmail
     }
+    
     this.emailService.sendMail(mailInfo)
     .subscribe({
       next(res) {

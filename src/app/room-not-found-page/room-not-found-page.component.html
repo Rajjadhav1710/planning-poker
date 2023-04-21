@@ -4,8 +4,18 @@
     <div class="room-not-found-page-navbar" [ngClass]="{
         'light-theme': themeService.getCurrentTheme() === 'light'
     }">
-        <img src="../../assets/full-logo-light-mode.svg" alt="logo">
-        <input type="checkbox" (click)="toggleCurrentTheme()">
+        <div class="room-not-found-page-navbar-left-items-container">
+            <img [src]="themeService.getCurrentTheme() === 'light' ? '../../assets/full-logo-light-mode.svg' : '../../assets/full-logo.svg' " alt="logo">
+        </div>
+        <div class="room-not-found-page-navbar-right-items-container">
+            <div class="navbar-theme-button-container">
+                <button (click)="toggleCurrentTheme()" [ngClass]="{
+                    'light-theme': themeService.getCurrentTheme() === 'light'
+                }">
+                    <fa-icon [icon]="['fas',themeService.getCurrentTheme() === 'light' ? 'moon' : 'sun']" [styles]="{'color':themeService.getCurrentTheme() === 'light' ? '' : 'rgb(246, 247, 249)'}" size="2x"></fa-icon>
+                </button>
+            </div>
+        </div>
     </div>
     <div class="room-not-found-page-body">
         <div class="room-not-found-page-info-container">

@@ -26,7 +26,7 @@
         <div class="single-input-modal-submit-btn-container">
             <button (click)="handleContinue()" [ngClass]="{
                 'light-theme': themeService.getCurrentTheme() === 'light'
-            }">Continue</button>
+            }">{{submitBtnText}}</button>
         </div>
     </div>
 </div>

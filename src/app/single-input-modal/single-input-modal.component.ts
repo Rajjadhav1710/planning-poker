@@ -8,7 +8,6 @@ import { ThemeService } from '../Services/theme.service';
   styleUrls: ['./single-input-modal.component.css']
 })
 export class SingleInputModalComponent {
-  modalData: string = "";
   @Input() heading: string = "";
   @Input() placeholder: string = "";
 
@@ -21,6 +20,8 @@ export class SingleInputModalComponent {
     profileImageUrl: string
   }>();// created custom event
 
+  modalData: string = "";
+  submitBtnText: string = "Continue";
   userImageSrc: string = "../../assets/default-user.png";
   userImage: any;
 
@@ -33,6 +34,8 @@ export class SingleInputModalComponent {
   }
 
   handleContinue(): void {
+
+    this.submitBtnText = "Loading...";
 
     let fileService: FileService = this.fileService;
 

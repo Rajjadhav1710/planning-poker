@@ -6,11 +6,30 @@
 .room-not-found-page-navbar{
     padding: 30px;
     background-color: rgb(55, 65, 81);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.room-not-found-page-navbar img{
+.room-not-found-page-navbar-left-items-container img{
     /* width: 12rem; */
     height: 3rem;
+}
+
+.navbar-theme-button-container button{
+    background-color: rgba(246,247,249,.05);
+    border: 2px solid rgb(55, 65, 81);
+    border-radius: 100%;
+    padding: 11px;
+    cursor: pointer;
+}
+
+.navbar-theme-button-container button:hover{
+    background-color: rgba(246, 247, 249, 0.137);
+}
+
+.navbar-theme-button-container button:active{
+    background-color: rgba(246, 247, 249, 0.137);
 }
 
 .room-not-found-page-body{
@@ -87,6 +106,10 @@
 
 .room-not-found-page-navbar.light-theme{
     background-color: rgb(243, 244, 246);
+}
+
+.navbar-theme-button-container button.light-theme{
+    border: 2px solid rgb(243, 244, 246);
 }
 
 .room-not-found-page-info-body p.light-theme{

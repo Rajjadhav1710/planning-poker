@@ -4,11 +4,21 @@
     <div class="join-room-page-navbar" [ngClass]="{
         'light-theme': themeService.getCurrentTheme() === 'light'
     }">
-        <img src="../../assets/logo-icon.svg" alt="logo">
-        <h2 [ngClass]="{
-            'light-theme': themeService.getCurrentTheme() === 'light'
-        }">Join Room</h2>
-        <input type="checkbox" (click)="toggleCurrentTheme()">
+        <div class="join-room-page-navbar-left-items-container">
+            <img src="../../assets/logo-icon.svg" alt="logo">
+            <h2 [ngClass]="{
+                'light-theme': themeService.getCurrentTheme() === 'light'
+            }">Join Room</h2>
+        </div>
+        <div class="join-room-page-navbar-right-items-container">
+            <div class="navbar-theme-button-container">
+                <button (click)="toggleCurrentTheme()" [ngClass]="{
+                    'light-theme': themeService.getCurrentTheme() === 'light'
+                }">
+                    <fa-icon [icon]="['fas',themeService.getCurrentTheme() === 'light' ? 'moon' : 'sun']" [styles]="{'color':themeService.getCurrentTheme() === 'light' ? '' : 'rgb(246, 247, 249)'}" size="2x"></fa-icon>
+                </button>
+            </div>
+        </div>
     </div>
     <div class="join-room-page-content">
         <div class="join-room-page-heading">

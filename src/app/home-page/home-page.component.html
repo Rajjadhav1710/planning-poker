@@ -5,7 +5,7 @@
         'light-theme': themeService.getCurrentTheme() === 'light'
     }">
         <div class="logo">
-            <img src="../../assets/full-logo-light-mode.svg" alt="logo">
+            <img [src]="themeService.getCurrentTheme() === 'light' ? '../../assets/full-logo-light-mode.svg' : '../../assets/full-logo.svg' " alt="logo">
         </div>
         <div class="home-page-navbar-buttons">
             <div class="navbar-new-room-button-container">
@@ -18,7 +18,14 @@
                     'light-theme': themeService.getCurrentTheme() === 'light'
                 }">Join Room</button>
             </div>
-            <input type="checkbox" (click)="toggleCurrentTheme()">
+            <div class="navbar-theme-button-container">
+                <button (click)="toggleCurrentTheme()" [ngClass]="{
+                    'light-theme': themeService.getCurrentTheme() === 'light'
+                }">
+                    <fa-icon [icon]="['fas',themeService.getCurrentTheme() === 'light' ? 'moon' : 'sun']" [styles]="{'color':themeService.getCurrentTheme() === 'light' ? '' : 'rgb(246, 247, 249)'}" size="2x"></fa-icon>
+                </button>
+                <!-- <input type="checkbox" (click)="toggleCurrentTheme()"> -->
+            </div>
         </div>
     </nav>
     <div class="test" style="display: flex; align-items: center;justify-content:space-between;text-align: center;color: #fff;margin-top: 6rem;">

@@ -115,6 +115,26 @@
     background-color: rgba(88, 175, 223,0.4);
 }
 
+.navbar-theme-button-container{
+    margin-left: 0.5rem;
+}
+
+.navbar-theme-button-container button{
+    background-color: rgba(246,247,249,.05);
+    border: 2px solid rgb(55, 65, 81);
+    border-radius: 100%;
+    padding: 11px;
+    cursor: pointer;
+}
+
+.navbar-theme-button-container button:hover{
+    background-color: rgba(246, 247, 249, 0.137);
+}
+
+.navbar-theme-button-container button:active{
+    background-color: rgba(246, 247, 249, 0.137);
+}
+
 .room-page-content-container{
     /* border: 2px solid yellow; */
     display: flex;
@@ -254,6 +274,10 @@
 
 .username-container p.light-theme{
     color: rgb(35, 39, 47);
+}
+
+.navbar-theme-button-container button.light-theme{
+    border: 2px solid rgb(243, 244, 246);
 }
 
 .room-voting-status.light-theme{

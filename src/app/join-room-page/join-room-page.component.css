@@ -8,16 +8,38 @@
     align-items: center;
     padding: 30px;
     background-color: rgb(55, 65, 81);
+    justify-content: space-between;
 }
 
-.join-room-page-navbar img{
+.join-room-page-navbar-left-items-container{
+    display: flex;
+    align-items: center;
+}
+
+.join-room-page-navbar-left-items-container img{
     /* width: 12rem; */
     height: 3rem;
     margin-right: 1rem;
 }
 
-.join-room-page-navbar h2{
+.join-room-page-navbar-left-items-container h2{
     color: rgb(246, 247, 249);
+}
+
+.navbar-theme-button-container button{
+    background-color: rgba(246,247,249,.05);
+    border: 2px solid rgb(55, 65, 81);
+    border-radius: 100%;
+    padding: 11px;
+    cursor: pointer;
+}
+
+.navbar-theme-button-container button:hover{
+    background-color: rgba(246, 247, 249, 0.137);
+}
+
+.navbar-theme-button-container button:active{
+    background-color: rgba(246, 247, 249, 0.137);
 }
 
 .join-room-page-content{
@@ -109,8 +131,12 @@
     background-color: rgb(243, 244, 246);
 }
 
-.join-room-page-navbar h2.light-theme{
+.join-room-page-navbar-left-items-container h2.light-theme{
     color: rgb(35, 39, 47);
+}
+
+.navbar-theme-button-container button.light-theme{
+    border: 2px solid rgb(243, 244, 246);
 }
 
 .room-id-input-container label.light-theme{

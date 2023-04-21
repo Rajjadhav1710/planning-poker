@@ -16,6 +16,7 @@
 
 .home-page-navbar-buttons{
     display: flex;
+    align-items: center;
 }
 
 .logo img{
@@ -62,6 +63,21 @@
     background-color: rgba(8, 126, 164, 0.8);
 }
 
+.navbar-theme-button-container button{
+    background-color: rgba(246,247,249,.05);
+    border: 2px solid rgb(55, 65, 81);
+    border-radius: 100%;
+    padding: 11px;
+    cursor: pointer;
+}
+
+.navbar-theme-button-container button:hover{
+    background-color: rgba(246, 247, 249, 0.137);
+}
+
+.navbar-theme-button-container button:active{
+    background-color: rgba(246, 247, 249, 0.137);
+}
 /* Light Mode Styles */
 
 .home-page-container.light-theme{
@@ -74,5 +90,9 @@
 
 .navbar-new-room-button-container button.light-theme,
 .navbar-join-room-button-container button.light-theme{
+    border: 2px solid rgb(243, 244, 246);
+}
+
+.navbar-theme-button-container button.light-theme{
     border: 2px solid rgb(243, 244, 246);
 }
