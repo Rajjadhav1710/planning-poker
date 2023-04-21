@@ -115,7 +115,7 @@
                     <button (click)="handleRevealCards()">Reveal Cards</button>
                 </div>
                 <div 
-                    *ngIf="roomDataService.getCurrentRoom().allCardsRevealed"
+                    *ngIf="roomDataService.getIsCurrentUserAdmin()&&roomDataService.getCurrentRoom().allCardsRevealed"
                     class="start-new-voting-btn-container"
                 >
                     <button (click)="handleStartNewVoting()">Start new voting</button>
