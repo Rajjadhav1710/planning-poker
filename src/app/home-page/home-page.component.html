@@ -28,10 +28,11 @@
             </div>
         </div>
     </nav>
-    <div class="test" style="display: flex; align-items: center;justify-content:space-between;text-align: center;color: #fff;margin-top: 6rem;">
-        <div style="margin-left: 11rem;">
+    <div class="test" style="display: flex; align-items: center;justify-content:space-between;text-align: center;margin-top: 6rem;">
+        <div style="margin-left: 11rem;" [ngStyle]="{'color': themeService.getCurrentTheme() === 'light' ? 'rgb(35, 39, 47)' : 'rgb(246, 247, 249)'}">
             <h1>Planning Poker Online,</h1>
             <h1> For Agile Development Teams</h1>
+            <p style="margin-top: 1rem;line-height: 1.5;">planning poker is an estimation technique used in agile project management to estimate the efforts required for a particular task or project</p>
         </div>
         <div style="margin-right: 5rem;">
             <img src="../../assets/test.png" alt="" style="width: 50rem;">

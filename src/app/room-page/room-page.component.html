@@ -10,10 +10,11 @@
 
     <app-invite-players-modal
         *ngIf="isInvitePlayersModalOpen"
-        [inviteLink]="'http://localhost:4200/'+getRoomId()"
+        [inviteLink]="'https://planning-poker-online.netlify.app/'+getRoomId()"
         [inviteCode]="getRoomId()"
         (closeInvitePlayersModalEvent)="toggleInvitePlayersModal()"
     ></app-invite-players-modal>
+    <!-- For local development : [inviteLink]="'http://localhost:4200/'+getRoomId()" -->
 
     <nav class="room-page-navbar" [ngClass]="{
         'light-theme': themeService.getCurrentTheme() === 'light'
