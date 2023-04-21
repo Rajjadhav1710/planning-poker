@@ -7,7 +7,7 @@ export class ThemeService {
   private currentTheme: string;
 
   constructor() { 
-    this.currentTheme = 'dark';
+    this.currentTheme = 'light';
   }
 
   getCurrentTheme(): string {
