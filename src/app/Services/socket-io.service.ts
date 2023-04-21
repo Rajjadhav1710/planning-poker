@@ -14,7 +14,8 @@ export class SocketIoService {
   private router: Router;
 
   constructor(roomDataService: RoomDataService, router: Router) { 
-    this.socket = io('localhost:3000');
+    // this.socket = io('localhost:3000');
+    this.socket = io('https://planning-poker-online.onrender.com');
     this.roomDataService = roomDataService;
     this.router = router;
 
