@@ -17,7 +17,7 @@ export class EmailService {
     emailFrom: string
   }){
     console.log(mailInfo);
-    // return this.http.post('http://localhost:3000/api/email', mailInfo);
-    return this.http.post('https://planning-poker-online.onrender.com/api/email', mailInfo);
+    return this.http.post('http://localhost:3000/api/email', mailInfo);
+    // return this.http.post('https://planning-poker-online.onrender.com/api/email', mailInfo);
   }
 }

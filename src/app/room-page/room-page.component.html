@@ -10,11 +10,12 @@
 
     <app-invite-players-modal
         *ngIf="isInvitePlayersModalOpen"
-        [inviteLink]="'https://planning-poker-online.netlify.app/'+getRoomId()"
+        [inviteLink]="'http://localhost:4200/'+getRoomId()"
         [inviteCode]="getRoomId()"
         (closeInvitePlayersModalEvent)="toggleInvitePlayersModal()"
     ></app-invite-players-modal>
     <!-- For local development : [inviteLink]="'http://localhost:4200/'+getRoomId()" -->
+    <!-- For local production : [inviteLink]="'https://planning-poker-online.netlify.app/'+getRoomId()" -->
 
     <nav class="room-page-navbar" [ngClass]="{
         'light-theme': themeService.getCurrentTheme() === 'light'
@@ -128,7 +129,7 @@
                 <app-voting-card 
                     [votingStatus]="roomDataService.getCurrentUser()?.votingStatus"
                     [userName]="roomDataService.getCurrentUser()?.userName"
-                    [userProfileImageURL]="roomDataService.getCurrentUser()?.profileImageUrl"
+                    [userProfileImageURL]="roomDataService.getCurrentUser() !== undefined ? roomDataService.getCurrentUser()?.profileImageUrl : '../../assets/default-user.png'"
                     [vote]="roomDataService.getCurrentUser()?.vote"
                     [allCardsRevealed]="roomDataService.getCurrentRoom().allCardsRevealed"
                 ></app-voting-card>

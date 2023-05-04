@@ -55,4 +55,11 @@
 
 .card button:hover.light-theme{
     /* background-color: rgb(246, 247, 249) */
+    background-color: rgba(88, 175, 223,0.4)
+}
+
+.card .selected-card.light-theme,.card .selected-card:hover.light-theme{
+    /* background-color: #3993ff;*/
+    background-color: rgb(20, 158, 202);
+    color: #fff;
 }
